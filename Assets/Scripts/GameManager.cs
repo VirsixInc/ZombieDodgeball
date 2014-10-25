@@ -343,7 +343,7 @@ public class GameManager : MonoBehaviour {
 		case "Main":
 			timer = gameTimer;
 			mode = GameMode.Main;
-			Application.LoadLevel("Main");
+			Application.LoadLevel("ZombieMain");
 			break;
 		}
 	}
