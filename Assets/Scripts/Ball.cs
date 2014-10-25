@@ -64,13 +64,13 @@ public class Ball : MonoBehaviour {
 				Destroy(Instantiate(hitParticle, col.contacts[0].point, Quaternion.identity), 4f); //TODO Eric: change to a better method
 
 				Transform parent = col.transform;
-				while(parent.name != "Enemy(Clone)")
-					parent = parent.parent;
+//				while(parent.name != "Enemy(Clone)")
+//					parent = parent.parent;
 
 				int pointsToAdd = 1;
-				if(parent.GetChild(2).gameObject.activeInHierarchy) {
-					pointsToAdd++;
-				}
+//				if(parent.GetChild(2).gameObject.activeInHierarchy) {
+//					pointsToAdd++;
+//				}
 
 				if(color == PlayerColor.Red ) {
 					FloatingTextManager.instance.CreateFloatingText( col.transform.position, pointsToAdd, Color.red );

@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject enemy;
 	public Transform enemySpawnPoint;
-	public float spawnRate = 3f;
+	public float spawnRate = 1f;
 
 	public bool randomSpawnTime = false;
 	public float randomRange = 1f;
@@ -29,8 +29,6 @@ public class GameManager : MonoBehaviour {
 	public float guiLeft = 0.2f;
 	public float guiTop = 0.8f;
 
-	public bool enemiesKnockback = false;
-
 	private GameObject redScoreBox, yellowScoreBox, blueScoreBox, greenScoreBox;
 //	private GUIText redScoreTxt, redPlaceTxt, redAccTxt,
 //						yellowScoreTxt, yellowPlaceTxt, yellowAccTxt,
@@ -44,7 +42,8 @@ public class GameManager : MonoBehaviour {
 
 	BallManager ballManager;
 	PlayerManager playerManager;
-	QueueManager queueManager;
+	//QueueManager queueManager;
+	SpawnManager spawnManager;
 
 //	public TextMesh scoreText;
 
@@ -91,7 +90,8 @@ public class GameManager : MonoBehaviour {
 		if(level == 0) {
 			introGUI = GameObject.Find("IntroGUI").GetComponent<IntroGUI>();
 		} else if(level == 1) {
-			queueManager = GameObject.Find( "QueueManager" ).GetComponent<QueueManager>();
+			//queueManager = GameObject.Find( "QueueManager" ).GetComponent<QueueManager>();
+			spawnManager = GameObject.FindObjectOfType<SpawnManager>();
 			//enemySpawnPoint = GameObject.Find( "EnemySpawnPoint" ).transform;
 
 //			redGameScore = GameObject.Find("RedScore").GetComponent<GUIText>();
@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour {
 			greenScoreBox = GameObject.Find( "InGameScoreGreen" );
 
 			StartCoroutine ("SpawnEnemy");
-			StartCoroutine( "StartEnemyMove" );
+			//StartCoroutine( "StartEnemyMove" );
 			GameObject.Find("GameCamera").camera.enabled = true;
 //			GameObject.Find("ScoreCamera").camera.enabled = false;
 			GameObject.Find("Timer").SetActive(true);
@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour {
 					HighScoreManager.AddScore(playerManager.playerData[i].score);
 				}
 
-				queueManager.Reset();
+				//queueManager.Reset();
 
 				Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();
 				foreach( Enemy enemy in enemies ) {
@@ -316,47 +316,25 @@ public class GameManager : MonoBehaviour {
 
 	IEnumerator SpawnEnemy() {
 		while(true) {
-			queueManager.SpawnNewEnemy( enemy );
-			yield return new WaitForSeconds( 0.25f );
+			//queueManager.SpawnNewEnemy( enemy );
+			spawnManager.SpawnNewHordeEnemy();
+			yield return new WaitForSeconds( spawnRate );
 		}
 	}
 
 	IEnumerator StartEnemyMove() {
 		while( true ) {
-			queueManager.StartNextInQueue();
+			//queueManager.StartNextInQueue();
 			yield return new WaitForSeconds( 1.5f );
 		}
 	}
-
-//	void OnGUI() {
-//		guiStyle.font = guiFont;
-//		guiStyle.normal.textColor = Color.yellow;
-//
-//		switch(mode) {
-//		case GameMode.Intro:
-//			if(timer > 0f) {
-//				string joinedPlayers = "";
-//				for(int i = 0; i < playerManager.playerData.Count; i++) {
-//					joinedPlayers += "\n" + playerManager.playerData[i].color + " has joined!";
-//				}
-//				GUI.Label(new Rect(Screen.width/2f - 100f, Screen.height/2f - 100f, 200f, 200f), "Game starts in: " + Mathf.CeilToInt(timer) + joinedPlayers, guiStyle);
-//			}
-//			break;
-//		case GameMode.Main:
-//			break;
-//		case GameMode.Scoreboard:
-////			Rect windowRect = new Rect((float)Screen.width*guiLeft, (float)Screen.height-((float)Screen.height*guiTop), 
-////			                           (float)Screen.width*(1f-(guiLeft*2f)), (float)Screen.height*(1f-guiTop));
-////			windowRect = GUILayout.Window(0, windowRect, ScoreboardWindow, "Scoreboard"/*, guiStyle*/);
-//			break;
-//		}
-//	}
 
 	void ChangeScene( string scene ) {
 		switch( scene )
 		{
 		case "Intro":
 			timer = 0f;
+			ResetSpawnManager();
 			gameStarted = false;
 			playerManager.playerData.Clear();
 			mode = GameMode.Intro;			
@@ -388,6 +366,14 @@ public class GameManager : MonoBehaviour {
 //    	}
 	}
 
+	public void ResetSpawnManager() {
+		if( spawnManager != null ) {
+			GameObject[] enemies = GameObject.FindGameObjectsWithTag( "Enemy" );
+			foreach( GameObject tempEnemy in enemies ) {
+				tempEnemy.SendMessage( "Reset", SendMessageOptions.DontRequireReceiver );
+			}
+		}
+	}
 
 	public void AdjustGameSetting(string setting, float value) {
 		switch(setting) 

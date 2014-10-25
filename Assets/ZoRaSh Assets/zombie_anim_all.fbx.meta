@@ -1,0 +1,1173 @@
+fileFormatVersion: 2
+guid: e68592857ce32440a8f8281712dc8807
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Character_GEO
+    100002: chest_01
+    100004: joint19
+    100006: joint20
+    100008: joint21
+    100010: l_ankle
+    100012: l_ball
+    100014: l_clavicle_01
+    100016: l_elbow_01
+    100018: l_hip
+    100020: l_knee
+    100022: l_shoulder_01
+    100024: l_toe
+    100026: l_wrist_01
+    100028: r_ankle
+    100030: r_ball
+    100032: r_clavicle_01
+    100034: r_elbow_01
+    100036: r_hip
+    100038: r_knee
+    100040: r_shoulder_01
+    100042: r_toe
+    100044: r_wrist_01
+    100046: Root
+    100048: root_LOC
+    100050: spine_01
+    100052: spine_02
+    100054: //RootNode
+    400000: Character_GEO
+    400002: chest_01
+    400004: joint19
+    400006: joint20
+    400008: joint21
+    400010: l_ankle
+    400012: l_ball
+    400014: l_clavicle_01
+    400016: l_elbow_01
+    400018: l_hip
+    400020: l_knee
+    400022: l_shoulder_01
+    400024: l_toe
+    400026: l_wrist_01
+    400028: r_ankle
+    400030: r_ball
+    400032: r_clavicle_01
+    400034: r_elbow_01
+    400036: r_hip
+    400038: r_knee
+    400040: r_shoulder_01
+    400042: r_toe
+    400044: r_wrist_01
+    400046: Root
+    400048: root_LOC
+    400050: spine_01
+    400052: spine_02
+    400054: //RootNode
+    4300000: Character_GEO
+    7400000: Take 001
+    7400002: Idle
+    7400004: Walk
+    7400006: Dance1
+    7400008: Dance2
+    7400010: PickUp
+    7400012: Carry
+    7400014: Drop
+    7400016: Death
+    9500000: //RootNode
+    13700000: Character_GEO
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character_GEO
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/l_hip
+        weight: 1
+      - path: Root/l_hip/l_knee
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball/l_toe
+        weight: 1
+      - path: Root/r_hip
+        weight: 1
+      - path: Root/r_hip/r_knee
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball/r_toe
+        weight: 1
+      - path: Root/spine_01
+        weight: 1
+      - path: Root/spine_01/spine_02
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20/joint21
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01/l_wrist_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01/r_wrist_01
+        weight: 1
+      - path: root_LOC
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 72
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character_GEO
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/l_hip
+        weight: 1
+      - path: Root/l_hip/l_knee
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball/l_toe
+        weight: 1
+      - path: Root/r_hip
+        weight: 1
+      - path: Root/r_hip/r_knee
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball/r_toe
+        weight: 1
+      - path: Root/spine_01
+        weight: 1
+      - path: Root/spine_01/spine_02
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20/joint21
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01/l_wrist_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01/r_wrist_01
+        weight: 1
+      - path: root_LOC
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 73
+      lastFrame: 104
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character_GEO
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/l_hip
+        weight: 1
+      - path: Root/l_hip/l_knee
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball/l_toe
+        weight: 1
+      - path: Root/r_hip
+        weight: 1
+      - path: Root/r_hip/r_knee
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball/r_toe
+        weight: 1
+      - path: Root/spine_01
+        weight: 1
+      - path: Root/spine_01/spine_02
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20/joint21
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01/l_wrist_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01/r_wrist_01
+        weight: 1
+      - path: root_LOC
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Dance1
+      takeName: Take 001
+      firstFrame: 105
+      lastFrame: 130
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character_GEO
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/l_hip
+        weight: 1
+      - path: Root/l_hip/l_knee
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball/l_toe
+        weight: 1
+      - path: Root/r_hip
+        weight: 1
+      - path: Root/r_hip/r_knee
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball/r_toe
+        weight: 1
+      - path: Root/spine_01
+        weight: 1
+      - path: Root/spine_01/spine_02
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20/joint21
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01/l_wrist_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01/r_wrist_01
+        weight: 1
+      - path: root_LOC
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Dance2
+      takeName: Take 001
+      firstFrame: 131
+      lastFrame: 170
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character_GEO
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/l_hip
+        weight: 1
+      - path: Root/l_hip/l_knee
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball/l_toe
+        weight: 1
+      - path: Root/r_hip
+        weight: 1
+      - path: Root/r_hip/r_knee
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball/r_toe
+        weight: 1
+      - path: Root/spine_01
+        weight: 1
+      - path: Root/spine_01/spine_02
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20/joint21
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01/l_wrist_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01/r_wrist_01
+        weight: 1
+      - path: root_LOC
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: PickUp
+      takeName: Take 001
+      firstFrame: 171
+      lastFrame: 205
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character_GEO
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/l_hip
+        weight: 1
+      - path: Root/l_hip/l_knee
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball/l_toe
+        weight: 1
+      - path: Root/r_hip
+        weight: 1
+      - path: Root/r_hip/r_knee
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball/r_toe
+        weight: 1
+      - path: Root/spine_01
+        weight: 1
+      - path: Root/spine_01/spine_02
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20/joint21
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01/l_wrist_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01/r_wrist_01
+        weight: 1
+      - path: root_LOC
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Carry
+      takeName: Take 001
+      firstFrame: 206
+      lastFrame: 239
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character_GEO
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/l_hip
+        weight: 1
+      - path: Root/l_hip/l_knee
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball/l_toe
+        weight: 1
+      - path: Root/r_hip
+        weight: 1
+      - path: Root/r_hip/r_knee
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball/r_toe
+        weight: 1
+      - path: Root/spine_01
+        weight: 1
+      - path: Root/spine_01/spine_02
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20/joint21
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01/l_wrist_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01/r_wrist_01
+        weight: 1
+      - path: root_LOC
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Drop
+      takeName: Take 001
+      firstFrame: 240
+      lastFrame: 270
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character_GEO
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/l_hip
+        weight: 1
+      - path: Root/l_hip/l_knee
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball/l_toe
+        weight: 1
+      - path: Root/r_hip
+        weight: 1
+      - path: Root/r_hip/r_knee
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball/r_toe
+        weight: 1
+      - path: Root/spine_01
+        weight: 1
+      - path: Root/spine_01/spine_02
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20/joint21
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01/l_wrist_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01/r_wrist_01
+        weight: 1
+      - path: root_LOC
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Death
+      takeName: Take 001
+      firstFrame: 271
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character_GEO
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/l_hip
+        weight: 1
+      - path: Root/l_hip/l_knee
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball/l_toe
+        weight: 1
+      - path: Root/r_hip
+        weight: 1
+      - path: Root/r_hip/r_knee
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball/r_toe
+        weight: 1
+      - path: Root/spine_01
+        weight: 1
+      - path: Root/spine_01/spine_02
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20/joint21
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01/l_wrist_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01/r_wrist_01
+        weight: 1
+      - path: root_LOC
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: Root
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_hip
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_hip
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_knee
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_knee
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_ankle
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_ankle
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: spine_01
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: spine_02
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint19
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint20
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_clavicle_01
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_clavicle_01
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_shoulder_01
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_shoulder_01
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_elbow_01
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_elbow_01
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_wrist_01
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_wrist_01
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_toe
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_toe
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: zombie_anim_all(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Character_GEO
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: root_LOC
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Root
+      position: {x: -.0007881294, y: .468605518, z: -.000256776315}
+      rotation: {x: -.703375638, y: .71081841, z: 3.27534622e-09, w: 3.31000494e-09}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spine_01
+      position: {x: -.174642786, y: 0, z: 0}
+      rotation: {x: 9.33760447e-09, y: -4.70556039e-09, z: .00526283449, w: -.999986172}
+      scale: {x: 1, y: .999999881, z: .999999881}
+      transformModified: 1
+    - name: spine_02
+      position: {x: -.130567789, y: -.0009032003, z: .000841622532}
+      rotation: {x: -9.31106658e-09, y: 2.00576583e-10, z: -.0215367451, w: -.999768138}
+      scale: {x: .999999762, y: .999999821, z: .999999762}
+      transformModified: 1
+    - name: chest_01
+      position: {x: -.213434219, y: 0, z: 0}
+      rotation: {x: .691714048, y: -.722171605, z: -3.36287287e-09, w: 3.2210441e-09}
+      scale: {x: 1, y: .99999994, z: 1}
+      transformModified: 1
+    - name: l_clavicle_01
+      position: {x: -.120404772, y: -.0202206764, z: .00373661565}
+      rotation: {x: 6.90019908e-09, y: -2.24637331e-09, z: -.0345912427, w: .999401569}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: l_shoulder_01
+      position: {x: -.133843556, y: .00362228462, z: -.00373661565}
+      rotation: {x: .00485908706, y: .0668364987, z: .0632487461, w: .995745361}
+      scale: {x: 1, y: 1.00000024, z: .999999762}
+      transformModified: 1
+    - name: l_elbow_01
+      position: {x: -.276550263, y: 0, z: -.0504861772}
+      rotation: {x: -.00545730209, y: -.133258745, z: -.0159117468, w: .990938544}
+      scale: {x: .99999994, y: 1.00000012, z: .99999994}
+      transformModified: 1
+    - name: l_wrist_01
+      position: {x: -.250736654, y: 7.10542746e-16, z: .0504861772}
+      rotation: {x: -8.73605455e-09, y: 1.30612765e-09, z: -.140695527, w: .990052998}
+      scale: {x: .99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: r_clavicle_01
+      position: {x: .1204051, y: -.0202210154, z: .00373662007}
+      rotation: {x: .999401569, y: .0345912576, z: 4.81490314e-09, w: -4.81490359e-09}
+      scale: {x: 1, y: 1, z: .999999881}
+      transformModified: 1
+    - name: r_shoulder_01
+      position: {x: .133842781, y: -.00362263666, z: .00373662007}
+      rotation: {x: .00485910056, y: .0668364018, z: .0632487014, w: .995745361}
+      scale: {x: 1.00000036, y: .999999762, z: .999999881}
+      transformModified: 1
+    - name: r_elbow_01
+      position: {x: .276550531, y: 1.59529208e-07, z: .0504862033}
+      rotation: {x: -.00538278837, y: -.133061439, z: -.0163323376, w: .990958571}
+      scale: {x: 1, y: 1, z: .999999881}
+      transformModified: 1
+    - name: r_wrist_01
+      position: {x: .250736713, y: -2.71260717e-07, z: -.0504862033}
+      rotation: {x: -2.4689375e-09, y: 1.69826431e-10, z: -.140695661, w: .990052879}
+      scale: {x: .999999762, y: 1.00000024, z: 1}
+      transformModified: 1
+    - name: joint19
+      position: {x: -.0091912169, y: .0735297352, z: 0}
+      rotation: {x: 1.64636083e-09, y: 1.64636094e-09, z: -.707106829, w: .707106829}
+      scale: {x: .999999881, y: 1, z: 1}
+      transformModified: 1
+    - name: joint20
+      position: {x: -.123162292, y: 1.11022304e-17, z: 1.11022304e-17}
+      rotation: {x: 5.49532212e-16, y: -6.98491975e-09, z: -5.11791735e-24, w: 1}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: joint21
+      position: {x: -1.03188193, y: 0, z: 0}
+      rotation: {x: 1.3170891e-08, y: -1.79690139e-16, z: .707106829, w: .707106829}
+      scale: {x: .999999881, y: 1, z: 1}
+      transformModified: 1
+    - name: l_hip
+      position: {x: -.00944423489, y: .115650408, z: -.0779750496}
+      rotation: {x: .0298230164, y: -.78908205, z: -.6131078, w: .0236420278}
+      scale: {x: 1.00000012, y: .999999821, z: .999999881}
+      transformModified: 1
+    - name: l_knee
+      position: {x: -.19665283, y: 0, z: 0}
+      rotation: {x: -.0582274236, y: .084254384, z: -.0994959027, w: .989753246}
+      scale: {x: .999999702, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: l_ankle
+      position: {x: -.195008501, y: .00274386769, z: -.039740324}
+      rotation: {x: .486758053, y: .438777447, z: -.407226712, w: .636166155}
+      scale: {x: .999999821, y: 1, z: 1}
+      transformModified: 1
+    - name: l_ball
+      position: {x: -.0267579742, y: -.0750518665, z: .093386434}
+      rotation: {x: 1.38045325e-05, y: -2.23765551e-06, z: 4.01587749e-06, w: 1}
+      scale: {x: 1.00000024, y: .999999881, z: 1}
+      transformModified: 1
+    - name: l_toe
+      position: {x: -.0311715137, y: 0, z: .122672237}
+      rotation: {x: -1.17460104e-08, y: -9.71522862e-09, z: -2.54021799e-08, w: 1}
+      scale: {x: 1.00000012, y: .99999994, z: 1}
+      transformModified: 1
+    - name: r_hip
+      position: {x: -.0118761882, y: -.115425959, z: -.0779749975}
+      rotation: {x: .724091589, y: -.0466520116, z: .0435727499, w: -.686743379}
+      scale: {x: 1, y: .999999642, z: .999999881}
+      transformModified: 1
+    - name: r_knee
+      position: {x: .196652114, y: 3.49107069e-07, z: 0}
+      rotation: {x: -.0572077669, y: .0834809616, z: -.103542969, w: .989463091}
+      scale: {x: .999999881, y: 1.00000012, z: .999999881}
+      transformModified: 1
+    - name: r_ankle
+      position: {x: .19500874, y: -.00274384418, z: .0397403017}
+      rotation: {x: .552362382, y: .534881353, z: -.331989884, w: .546425283}
+      scale: {x: 1, y: .999999821, z: .999999642}
+      transformModified: 1
+    - name: r_ball
+      position: {x: .0267580003, y: .0750518963, z: -.0933862999}
+      rotation: {x: 1.02283475e-05, y: -1.15629859e-06, z: 2.59321564e-06, w: 1}
+      scale: {x: 1, y: 1.00000024, z: 1.00000024}
+      transformModified: 1
+    - name: r_toe
+      position: {x: .0311720017, y: 0, z: -.122671999}
+      rotation: {x: 1.28324142e-08, y: 3.38309434e-08, z: -2.90950481e-08, w: 1}
+      scale: {x: 1, y: 1, z: .99999994}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  additionalBone: 0
+  userData: 

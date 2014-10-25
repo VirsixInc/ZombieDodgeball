@@ -1,0 +1,928 @@
+fileFormatVersion: 2
+guid: 071f2874e3c84f94cac8c0ec62859a03
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Balloon_GEO
+    100002: //RootNode
+    100004: Character_GEO
+    100006: chest_01
+    100008: chest_ctrl
+    100010: cluster1Handle
+    100012: cluster2Handle
+    100014: cluster3Handle
+    100016: cluster4Handle
+    100018: cluster5Handle
+    100020: group2
+    100022: group3
+    100024: group4
+    100026: group4 1
+    100028: group4 2
+    100030: group4 3
+    100032: group5
+    100034: group6
+    100036: group6 1
+    100038: group7
+    100040: head_ctrl
+    100042: hip_ctrl
+    100044: hip_sway_aux_ctrl
+    100046: ikHandle5
+    100048: ikHandle6
+    100050: ikHandle7
+    100052: joint19
+    100054: joint20
+    100056: joint21
+    100058: joint22
+    100060: joint23
+    100062: joint24
+    100064: joint25
+    100066: joint26
+    100068: joint27
+    100070: joint28
+    100072: joint29
+    100074: joint30
+    100076: joint31
+    100078: joint32
+    100080: l_ankle
+    100082: l_arm_ik_ctrl
+    100084: l_arm_IK_Key
+    100086: l_ball
+    100088: l_clavicle_01
+    100090: l_elbow_01
+    100092: l_elbow_ctrl
+    100094: l_foot_ctrl
+    100096: l_hip
+    100098: l_knee
+    100100: l_rev_ball
+    100102: l_rev_foot
+    100104: l_rev_heel
+    100106: l_rev_toe
+    100108: l_shoulder_01
+    100110: l_shoulder_ctrl
+    100112: l_toe
+    100114: l_wrist_01
+    100116: l_wrist_ctrl
+    100118: left_ball_IK
+    100120: left_leg_IK
+    100122: left_toe_IK
+    100124: main_anim
+    100126: nurbsCircle1
+    100128: nurbsCircle2
+    100130: nurbsCircle3
+    100132: nurbsCircle4
+    100134: nurbsCircle5
+    100136: r_ankle
+    100138: r_arm_ik_ctrl
+    100140: r_arm_IK_Key
+    100142: r_ball
+    100144: r_ball_IK
+    100146: r_clavicle_01
+    100148: r_elbow_01
+    100150: r_elbow_ctrl
+    100152: r_foot_ctrl
+    100154: r_hip
+    100156: r_knee
+    100158: r_leg_IK
+    100160: r_rev_ball
+    100162: r_rev_foot
+    100164: r_rev_heel
+    100166: r_rev_toe
+    100168: r_shoulder_01
+    100170: r_shoulder_ctrl
+    100172: r_toe
+    100174: r_toe_IK
+    100176: r_wrist_01
+    100178: r_wrist_ctrl
+    100180: Root
+    100182: root_LOC
+    100184: rope_GEO
+    100186: rope_waist
+    100188: spine_01
+    100190: spine_02
+    400000: Balloon_GEO
+    400002: //RootNode
+    400004: Character_GEO
+    400006: chest_01
+    400008: chest_ctrl
+    400010: cluster1Handle
+    400012: cluster2Handle
+    400014: cluster3Handle
+    400016: cluster4Handle
+    400018: cluster5Handle
+    400020: group2
+    400022: group3
+    400024: group4
+    400026: group4 1
+    400028: group4 2
+    400030: group4 3
+    400032: group5
+    400034: group6
+    400036: group6 1
+    400038: group7
+    400040: head_ctrl
+    400042: hip_ctrl
+    400044: hip_sway_aux_ctrl
+    400046: ikHandle5
+    400048: ikHandle6
+    400050: ikHandle7
+    400052: joint19
+    400054: joint20
+    400056: joint21
+    400058: joint22
+    400060: joint23
+    400062: joint24
+    400064: joint25
+    400066: joint26
+    400068: joint27
+    400070: joint28
+    400072: joint29
+    400074: joint30
+    400076: joint31
+    400078: joint32
+    400080: l_ankle
+    400082: l_arm_ik_ctrl
+    400084: l_arm_IK_Key
+    400086: l_ball
+    400088: l_clavicle_01
+    400090: l_elbow_01
+    400092: l_elbow_ctrl
+    400094: l_foot_ctrl
+    400096: l_hip
+    400098: l_knee
+    400100: l_rev_ball
+    400102: l_rev_foot
+    400104: l_rev_heel
+    400106: l_rev_toe
+    400108: l_shoulder_01
+    400110: l_shoulder_ctrl
+    400112: l_toe
+    400114: l_wrist_01
+    400116: l_wrist_ctrl
+    400118: left_ball_IK
+    400120: left_leg_IK
+    400122: left_toe_IK
+    400124: main_anim
+    400126: nurbsCircle1
+    400128: nurbsCircle2
+    400130: nurbsCircle3
+    400132: nurbsCircle4
+    400134: nurbsCircle5
+    400136: r_ankle
+    400138: r_arm_ik_ctrl
+    400140: r_arm_IK_Key
+    400142: r_ball
+    400144: r_ball_IK
+    400146: r_clavicle_01
+    400148: r_elbow_01
+    400150: r_elbow_ctrl
+    400152: r_foot_ctrl
+    400154: r_hip
+    400156: r_knee
+    400158: r_leg_IK
+    400160: r_rev_ball
+    400162: r_rev_foot
+    400164: r_rev_heel
+    400166: r_rev_toe
+    400168: r_shoulder_01
+    400170: r_shoulder_ctrl
+    400172: r_toe
+    400174: r_toe_IK
+    400176: r_wrist_01
+    400178: r_wrist_ctrl
+    400180: Root
+    400182: root_LOC
+    400184: rope_GEO
+    400186: rope_waist
+    400188: spine_01
+    400190: spine_02
+    2300000: Balloon_GEO
+    2300002: rope_waist
+    3300000: Balloon_GEO
+    3300002: rope_waist
+    4300000: Character_GEO
+    4300002: rope_waist
+    4300004: rope_GEO
+    4300006: Balloon_GEO
+    7400000: Idle
+    7400002: Hit
+    7400004: Dead
+    9500000: //RootNode
+    13700000: Character_GEO
+    13700002: rope_GEO
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 2
+      lastFrame: 144
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Balloon_GEO
+        weight: 1
+      - path: Character_GEO
+        weight: 1
+      - path: ikHandle7
+        weight: 1
+      - path: ikHandle7/group2
+        weight: 1
+      - path: l_arm_IK_Key
+        weight: 1
+      - path: main_anim
+        weight: 1
+      - path: main_anim/hip_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/head_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/l_shoulder_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/l_shoulder_ctrl/l_elbow_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/l_shoulder_ctrl/l_elbow_ctrl/l_wrist_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/r_shoulder_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/r_shoulder_ctrl/r_elbow_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/r_shoulder_ctrl/r_elbow_ctrl/r_wrist_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/group3
+        weight: 1
+      - path: main_anim/hip_ctrl/hip_sway_aux_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/cluster4Handle
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28/joint29
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28/joint29/joint30
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28/joint29/joint30/joint31
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28/joint29/joint30/joint31/joint32
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/group4
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/group4/cluster2Handle
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/group4 1
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/group5
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/group5/cluster1Handle
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/group4
+          2
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/group6
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/group6/cluster3Handle
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4/group4
+          3
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4/group6
+          1
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4/group7
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4/group7/cluster5Handle
+        weight: 1
+      - path: main_anim/l_arm_ik_ctrl
+        weight: 1
+      - path: main_anim/l_arm_ik_ctrl/ikHandle5
+        weight: 1
+      - path: main_anim/l_foot_ctrl
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/l_rev_ball
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/l_rev_ball/l_rev_foot
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/l_rev_ball/l_rev_foot/left_leg_IK
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/l_rev_ball/left_ball_IK
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/left_toe_IK
+        weight: 1
+      - path: main_anim/r_arm_ik_ctrl
+        weight: 1
+      - path: main_anim/r_arm_ik_ctrl/ikHandle6
+        weight: 1
+      - path: main_anim/r_foot_ctrl
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_rev_ball
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_rev_ball/r_ball_IK
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_rev_ball/r_rev_foot
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_rev_ball/r_rev_foot/r_leg_IK
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_toe_IK
+        weight: 1
+      - path: r_arm_IK_Key
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/l_hip
+        weight: 1
+      - path: Root/l_hip/l_knee
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball/l_toe
+        weight: 1
+      - path: Root/r_hip
+        weight: 1
+      - path: Root/r_hip/r_knee
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball/r_toe
+        weight: 1
+      - path: Root/spine_01
+        weight: 1
+      - path: Root/spine_01/spine_02
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20/joint21
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01/l_wrist_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01/r_wrist_01
+        weight: 1
+      - path: root_LOC
+        weight: 1
+      - path: rope_GEO
+        weight: 1
+      - path: rope_waist
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Hit
+      takeName: Take 001
+      firstFrame: 486
+      lastFrame: 548
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Balloon_GEO
+        weight: 1
+      - path: Character_GEO
+        weight: 1
+      - path: ikHandle7
+        weight: 1
+      - path: ikHandle7/group2
+        weight: 1
+      - path: l_arm_IK_Key
+        weight: 1
+      - path: main_anim
+        weight: 1
+      - path: main_anim/hip_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/head_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/l_shoulder_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/l_shoulder_ctrl/l_elbow_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/l_shoulder_ctrl/l_elbow_ctrl/l_wrist_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/r_shoulder_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/r_shoulder_ctrl/r_elbow_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/r_shoulder_ctrl/r_elbow_ctrl/r_wrist_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/group3
+        weight: 1
+      - path: main_anim/hip_ctrl/hip_sway_aux_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/cluster4Handle
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28/joint29
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28/joint29/joint30
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28/joint29/joint30/joint31
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28/joint29/joint30/joint31/joint32
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/group4
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/group4/cluster2Handle
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/group4 1
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/group5
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/group5/cluster1Handle
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/group4
+          2
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/group6
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/group6/cluster3Handle
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4/group4
+          3
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4/group6
+          1
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4/group7
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4/group7/cluster5Handle
+        weight: 1
+      - path: main_anim/l_arm_ik_ctrl
+        weight: 1
+      - path: main_anim/l_arm_ik_ctrl/ikHandle5
+        weight: 1
+      - path: main_anim/l_foot_ctrl
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/l_rev_ball
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/l_rev_ball/l_rev_foot
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/l_rev_ball/l_rev_foot/left_leg_IK
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/l_rev_ball/left_ball_IK
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/left_toe_IK
+        weight: 1
+      - path: main_anim/r_arm_ik_ctrl
+        weight: 1
+      - path: main_anim/r_arm_ik_ctrl/ikHandle6
+        weight: 1
+      - path: main_anim/r_foot_ctrl
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_rev_ball
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_rev_ball/r_ball_IK
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_rev_ball/r_rev_foot
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_rev_ball/r_rev_foot/r_leg_IK
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_toe_IK
+        weight: 1
+      - path: r_arm_IK_Key
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/l_hip
+        weight: 1
+      - path: Root/l_hip/l_knee
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball/l_toe
+        weight: 1
+      - path: Root/r_hip
+        weight: 1
+      - path: Root/r_hip/r_knee
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball/r_toe
+        weight: 1
+      - path: Root/spine_01
+        weight: 1
+      - path: Root/spine_01/spine_02
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20/joint21
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01/l_wrist_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01/r_wrist_01
+        weight: 1
+      - path: root_LOC
+        weight: 1
+      - path: rope_GEO
+        weight: 1
+      - path: rope_waist
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Dead
+      takeName: Take 001
+      firstFrame: 549
+      lastFrame: 696
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Balloon_GEO
+        weight: 1
+      - path: Character_GEO
+        weight: 1
+      - path: ikHandle7
+        weight: 1
+      - path: ikHandle7/group2
+        weight: 1
+      - path: l_arm_IK_Key
+        weight: 1
+      - path: main_anim
+        weight: 1
+      - path: main_anim/hip_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/head_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/l_shoulder_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/l_shoulder_ctrl/l_elbow_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/l_shoulder_ctrl/l_elbow_ctrl/l_wrist_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/r_shoulder_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/r_shoulder_ctrl/r_elbow_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/chest_ctrl/r_shoulder_ctrl/r_elbow_ctrl/r_wrist_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/group3
+        weight: 1
+      - path: main_anim/hip_ctrl/hip_sway_aux_ctrl
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/cluster4Handle
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28/joint29
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28/joint29/joint30
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28/joint29/joint30/joint31
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/joint22/joint23/joint24/joint25/joint26/joint27/joint28/joint29/joint30/joint31/joint32
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/group4
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/group4/cluster2Handle
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/group4 1
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/group5
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/group5/cluster1Handle
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/group4
+          2
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/group6
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/group6/cluster3Handle
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4/group4
+          3
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4/group6
+          1
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4/group7
+        weight: 1
+      - path: main_anim/hip_ctrl/nurbsCircle5/nurbsCircle1/nurbsCircle2/nurbsCircle3/nurbsCircle4/group7/cluster5Handle
+        weight: 1
+      - path: main_anim/l_arm_ik_ctrl
+        weight: 1
+      - path: main_anim/l_arm_ik_ctrl/ikHandle5
+        weight: 1
+      - path: main_anim/l_foot_ctrl
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/l_rev_ball
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/l_rev_ball/l_rev_foot
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/l_rev_ball/l_rev_foot/left_leg_IK
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/l_rev_ball/left_ball_IK
+        weight: 1
+      - path: main_anim/l_foot_ctrl/l_rev_heel/l_rev_toe/left_toe_IK
+        weight: 1
+      - path: main_anim/r_arm_ik_ctrl
+        weight: 1
+      - path: main_anim/r_arm_ik_ctrl/ikHandle6
+        weight: 1
+      - path: main_anim/r_foot_ctrl
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_rev_ball
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_rev_ball/r_ball_IK
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_rev_ball/r_rev_foot
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_rev_ball/r_rev_foot/r_leg_IK
+        weight: 1
+      - path: main_anim/r_foot_ctrl/r_rev_heel/r_rev_toe/r_toe_IK
+        weight: 1
+      - path: r_arm_IK_Key
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/l_hip
+        weight: 1
+      - path: Root/l_hip/l_knee
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball
+        weight: 1
+      - path: Root/l_hip/l_knee/l_ankle/l_ball/l_toe
+        weight: 1
+      - path: Root/r_hip
+        weight: 1
+      - path: Root/r_hip/r_knee
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball
+        weight: 1
+      - path: Root/r_hip/r_knee/r_ankle/r_ball/r_toe
+        weight: 1
+      - path: Root/spine_01
+        weight: 1
+      - path: Root/spine_01/spine_02
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/joint19/joint20/joint21
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/l_clavicle_01/l_shoulder_01/l_elbow_01/l_wrist_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01
+        weight: 1
+      - path: Root/spine_01/spine_02/chest_01/r_clavicle_01/r_shoulder_01/r_elbow_01/r_wrist_01
+        weight: 1
+      - path: root_LOC
+        weight: 1
+      - path: rope_GEO
+        weight: 1
+      - path: rope_waist
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

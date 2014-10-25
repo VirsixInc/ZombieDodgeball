@@ -124,19 +124,19 @@ public class Enemy : MonoBehaviour {
 
 			int pointsToAdd = 1;
 
-			if(animator == transform.GetChild(2).GetComponent<Animator>())
-				pointsToAdd++;
+//			if(animator == transform.GetChild(2).GetComponent<Animator>())
+//				pointsToAdd++;
 
 			if(p_hitBy.name.Contains("Red")) {
 				PlayerManager.AddPoints(PlayerColor.Red, pointsToAdd);
-			} 
-			else if(p_hitBy.name.Contains("Yellow")) {
-				PlayerManager.AddPoints(PlayerColor.Yellow, pointsToAdd);
-			} 
-			else if(p_hitBy.name.Contains("Green")) {
-				PlayerManager.AddPoints(PlayerColor.Green, pointsToAdd);
-			} else if(p_hitBy.name.Contains("Blue")) {
-				PlayerManager.AddPoints(PlayerColor.Blue, pointsToAdd);
+//			} 
+//			else if(p_hitBy.name.Contains("Yellow")) {
+//				PlayerManager.AddPoints(PlayerColor.Yellow, pointsToAdd);
+//			} 
+//			else if(p_hitBy.name.Contains("Green")) {
+//				PlayerManager.AddPoints(PlayerColor.Green, pointsToAdd);
+//			} else if(p_hitBy.name.Contains("Blue")) {
+//				PlayerManager.AddPoints(PlayerColor.Blue, pointsToAdd);
 			} else {
 				print ("wtf");
 			}
@@ -154,36 +154,36 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
-	IEnumerator Move() {
-		float timer = 0f;
-		while(curRow <= floor.rows - 1) {
-			float t_time = Time.time;
-
-			yield return StartCoroutine ("Hop", new HopData (floor.tiles[curColumn, curRow].transform.position, Random.Range(1.5f, 1.7f)));
-			//yield return StartCoroutine ("Hop", new HopData (floor.tiles[curColumn, curRow].transform.position, 1.78f));
-
-			timer += Time.time - t_time;
-
-			if(timer > jumpRate) {
-				timer = 0f;
-				float rand = Random.Range(0f, 100f);
-				if(rand < moveForwardChancePct) {
-					curRow++; 			// Forward
-				} else if(rand < moveForwardChancePct + ((100f - moveForwardChancePct)/2f)) {
-					if(curColumn > 0)
-						curColumn--; 	// Left
-				} else {
-					if(curColumn < floor.columns - 1)
-						curColumn++; 	// Right
-				}
-			}
-		}
-		print ("Ouch!");
-		PlayerManager.ReducePoints(1);
-
-		gameObject.SetActive(false);
-		StopAllCoroutines();
-	}
+//	IEnumerator Move() {
+//		float timer = 0f;
+//		while(curRow <= floor.rows - 1) {
+//			float t_time = Time.time;
+//
+//			yield return StartCoroutine ("Hop", new HopData (floor.tiles[curColumn, curRow].transform.position, Random.Range(1.5f, 1.7f)));
+//			//yield return StartCoroutine ("Hop", new HopData (floor.tiles[curColumn, curRow].transform.position, 1.78f));
+//
+//			timer += Time.time - t_time;
+//
+//			if(timer > jumpRate) {
+//				timer = 0f;
+//				float rand = Random.Range(0f, 100f);
+//				if(rand < moveForwardChancePct) {
+//					curRow++; 			// Forward
+//				} else if(rand < moveForwardChancePct + ((100f - moveForwardChancePct)/2f)) {
+//					if(curColumn > 0)
+//						curColumn--; 	// Left
+//				} else {
+//					if(curColumn < floor.columns - 1)
+//						curColumn++; 	// Right
+//				}
+//			}
+//		}
+//		print ("Ouch!");
+//		PlayerManager.ReducePoints(1);
+//
+//		gameObject.SetActive(false);
+//		StopAllCoroutines();
+//	}
 
 	IEnumerator Hop(HopData data) {
 		animator.transform.localPosition = Vector3.zero;
@@ -193,7 +193,7 @@ public class Enemy : MonoBehaviour {
 		else
 			animator.SetInteger("RandomJump", Random.Range(1, 10));
 
-		ClosestTile(transform.position).GetComponent<Animator>().SetTrigger("Bounce");
+		//ClosestTile(transform.position).GetComponent<Animator>().SetTrigger("Bounce");
 		Vector3 startPos = transform.position;
 		float timer = 0.0f;
 
@@ -244,17 +244,17 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
-	Transform ClosestTile(Vector3 pos) {
-		Transform closestTile = floor.tiles[0, 0].transform;
-		for(int i = 0; i < floor.columns; i++) {
-			for(int j = 0; j < floor.rows; j++) {
-				if(Vector3.Distance(floor.tiles[i, j].transform.position, pos) < Vector3.Distance(closestTile.position, pos)) {
-					closestTile = floor.tiles[i, j].transform;
-				}
-			}
-		}
-		return closestTile;
-	}
+//	Transform ClosestTile(Vector3 pos) {
+//		Transform closestTile = floor.tiles[0, 0].transform;
+//		for(int i = 0; i < floor.columns; i++) {
+//			for(int j = 0; j < floor.rows; j++) {
+//				if(Vector3.Distance(floor.tiles[i, j].transform.position, pos) < Vector3.Distance(closestTile.position, pos)) {
+//					closestTile = floor.tiles[i, j].transform;
+//				}
+//			}
+//		}
+//		return closestTile;
+//	}
 
 	public void StartMove() {
 		StartCoroutine( "Move" );
