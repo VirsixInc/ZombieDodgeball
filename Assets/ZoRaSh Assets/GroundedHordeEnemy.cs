@@ -53,21 +53,25 @@ public class GroundedHordeEnemy : BaseHordeEnemy {
 
 	protected override void Hit( GameObject hittingObj ) {
 		if( !m_hasBeenHit ) {
-			int pointsToAdd = 1;
+			Ball hittingBall = hittingObj.GetComponent<Ball>();
 
-			if( hittingObj.name.Contains( "Red" ) )
-				PlayerManager.AddPoints(PlayerColor.Red, pointsToAdd);
-			
-			else if ( hittingObj.name.Contains( "Yellow" ) )
-				PlayerManager.AddPoints(PlayerColor.Yellow, pointsToAdd);
-			
-			else if ( hittingObj.name.Contains( "Green" ) )
-				PlayerManager.AddPoints(PlayerColor.Green, pointsToAdd);
-			
-			else if ( hittingObj.name.Contains( "Blue" ) )
-				PlayerManager.AddPoints(PlayerColor.Blue, pointsToAdd);
-			else
-				Debug.LogError( hittingObj.name + " doesn't have a name containing a supported Color" );
+
+			if( hittingBall.color == PlayerColor.Red ) {
+				PlayerManager.AddPoints(PlayerColor.Red, m_pointWorth);
+				FloatingTextManager.instance.CreateFloatingText( m_thisTransform.position, m_pointWorth, Color.red );
+			}
+			else if( hittingBall.color == PlayerColor.Green) {
+				PlayerManager.AddPoints(PlayerColor.Green, m_pointWorth);
+				FloatingTextManager.instance.CreateFloatingText( m_thisTransform.position, m_pointWorth, Color.green );
+			}
+			else if( hittingBall.color == PlayerColor.Yellow) {
+				PlayerManager.AddPoints(PlayerColor.Yellow, m_pointWorth);
+				FloatingTextManager.instance.CreateFloatingText( m_thisTransform.position, m_pointWorth, Color.yellow );
+			}
+			else if( hittingBall.color == PlayerColor.Blue) {
+				PlayerManager.AddPoints(PlayerColor.Blue, m_pointWorth);
+				FloatingTextManager.instance.CreateFloatingText( m_thisTransform.position, m_pointWorth, Color.blue );
+			}
 
 
 			SetKinematic( false );

@@ -21,7 +21,7 @@ public class FlyingHordeEnemy : BaseHordeEnemy {
 	void Update() {
 		if( !m_dead ) {
 			if( m_isMoving ) {
-				if( Vector3.Distance( m_thisTransform.position, m_nextWaypoint.transform.position ) < 2f && m_nextWaypoint.m_nextWaypoints.Length > 0 ) {
+				if( Vector3.Distance( m_thisTransform.position, m_nextWaypoint.transform.position ) < 2f && m_nextWaypoint.m_nextFlyingWaypoints.Length > 0 ) {
 					m_nextWaypoint = m_nextWaypoint.m_nextFlyingWaypoints[Random.Range( 0, m_nextWaypoint.m_nextFlyingWaypoints.Length )];
 					m_startRot = m_thisTransform.rotation;
 					m_facingNextPoint = false;
@@ -61,22 +61,24 @@ public class FlyingHordeEnemy : BaseHordeEnemy {
 	
 	protected override void Hit( GameObject hittingObj ) {
 		if( !m_hasBeenHit ) {
-			int pointsToAdd = 1;
+			Ball hittingBall = hittingObj.GetComponent<Ball>();
 
-			if( hittingObj.name.Contains( "Red" ) )
-				PlayerManager.AddPoints(PlayerColor.Red, pointsToAdd);
-
-			else if ( hittingObj.name.Contains( "Yellow" ) )
-				PlayerManager.AddPoints(PlayerColor.Yellow, pointsToAdd);
-
-			else if ( hittingObj.name.Contains( "Green" ) )
-				PlayerManager.AddPoints(PlayerColor.Green, pointsToAdd);
-
-			else if ( hittingObj.name.Contains( "Blue" ) )
-				PlayerManager.AddPoints(PlayerColor.Blue, pointsToAdd);
-			else
-				Debug.LogError( hittingObj.name + " doesn't have a name containing a supported Color" );
-
+			if( hittingBall.color == PlayerColor.Red ) {
+				PlayerManager.AddPoints(PlayerColor.Red, m_pointWorth);
+				FloatingTextManager.instance.CreateFloatingText( m_thisTransform.position, m_pointWorth, Color.red );
+			}
+			else if( hittingBall.color == PlayerColor.Green) {
+				PlayerManager.AddPoints(PlayerColor.Green, m_pointWorth);
+				FloatingTextManager.instance.CreateFloatingText( m_thisTransform.position, m_pointWorth, Color.green );
+			}
+			else if( hittingBall.color == PlayerColor.Yellow) {
+				PlayerManager.AddPoints(PlayerColor.Yellow, m_pointWorth);
+				FloatingTextManager.instance.CreateFloatingText( m_thisTransform.position, m_pointWorth, Color.yellow );
+			}
+			else if( hittingBall.color == PlayerColor.Blue) {
+				PlayerManager.AddPoints(PlayerColor.Blue, m_pointWorth);
+				FloatingTextManager.instance.CreateFloatingText( m_thisTransform.position, m_pointWorth, Color.blue );
+			}
 			m_hasBeenHit = true;
 			m_isMoving = false;
 			m_dead = true;

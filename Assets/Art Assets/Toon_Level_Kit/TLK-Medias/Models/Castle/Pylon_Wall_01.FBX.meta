@@ -1,13 +1,15 @@
 fileFormatVersion: 2
-guid: 40bea7aec295c48308d2712ee6429ff0
+guid: 11bf0bf1a7f614948be590b36c6f11d0
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Pylon_Wall_01 1
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Stone_Alone_01
+    400002: Pylon_Wall_01 1
+    2300000: Pylon_Wall_01 1
+    3300000: Pylon_Wall_01 1
+    4300000: Pylon_Wall_01
     11100000: //RootNode
   materials:
     importMaterials: 1

@@ -67,23 +67,23 @@ public class Ball : MonoBehaviour {
 //				while(parent.name != "Enemy(Clone)")
 //					parent = parent.parent;
 
-				int pointsToAdd = 1;
+//				int pointsToAdd = 1;
 //				if(parent.GetChild(2).gameObject.activeInHierarchy) {
 //					pointsToAdd++;
 //				}
 
-				if(color == PlayerColor.Red ) {
-					FloatingTextManager.instance.CreateFloatingText( col.transform.position, pointsToAdd, Color.red );
-				}
-				else if(color == PlayerColor.Green) {
-					FloatingTextManager.instance.CreateFloatingText( col.transform.position, pointsToAdd, Color.green );
-				}
-				else if(color == PlayerColor.Yellow) {
-					FloatingTextManager.instance.CreateFloatingText( col.transform.position, pointsToAdd, Color.yellow );
-				}
-				else if(color == PlayerColor.Blue) {
-					FloatingTextManager.instance.CreateFloatingText( col.transform.position, pointsToAdd, Color.blue );
-				}
+//				if(color == PlayerColor.Red ) {
+//					FloatingTextManager.instance.CreateFloatingText( col.transform.position, pointsToAdd, Color.red );
+//				}
+//				else if(color == PlayerColor.Green) {
+//					FloatingTextManager.instance.CreateFloatingText( col.transform.position, pointsToAdd, Color.green );
+//				}
+//				else if(color == PlayerColor.Yellow) {
+//					FloatingTextManager.instance.CreateFloatingText( col.transform.position, pointsToAdd, Color.yellow );
+//				}
+//				else if(color == PlayerColor.Blue) {
+//					FloatingTextManager.instance.CreateFloatingText( col.transform.position, pointsToAdd, Color.blue );
+//				}
 			}
 
 			rigidbody.velocity = Vector3.zero;

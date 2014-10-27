@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour {
 
 	enum GameMode {Intro, Main, Scoreboard}
 
+	public int maxLives = 10;
+	private int currLives;
+
 	public GameObject enemy;
 	public Transform enemySpawnPoint;
 	public float spawnRate = 1f;
@@ -16,6 +19,7 @@ public class GameManager : MonoBehaviour {
 
 	GameMode mode = GameMode.Intro;
 	bool gameStarted = false;
+	public bool isGamePlaying = false;
 
 	public float joinTimer = 5f;
 	public float gameTimer = 180f;
@@ -28,6 +32,7 @@ public class GameManager : MonoBehaviour {
 	public Font guiFont;
 	public float guiLeft = 0.2f;
 	public float guiTop = 0.8f;
+	public Transform gameOverText;
 
 	private GameObject redScoreBox, yellowScoreBox, blueScoreBox, greenScoreBox;
 //	private GUIText redScoreTxt, redPlaceTxt, redAccTxt,
@@ -78,7 +83,7 @@ public class GameManager : MonoBehaviour {
 	#endregion
 
 	void Start() {
-
+		currLives = maxLives;
 		introGUI = GameObject.Find("IntroGUI").GetComponent<IntroGUI>();
 		ballManager = GetComponent<BallManager> ();
 		playerManager = GetComponent<PlayerManager> ();
@@ -90,6 +95,9 @@ public class GameManager : MonoBehaviour {
 		if(level == 0) {
 			introGUI = GameObject.Find("IntroGUI").GetComponent<IntroGUI>();
 		} else if(level == 1) {
+			isGamePlaying = true;
+			gameOverText = GameObject.Find( "GameOverGui" ).transform;
+			gameOverText.gameObject.SetActive( true );
 			//queueManager = GameObject.Find( "QueueManager" ).GetComponent<QueueManager>();
 			spawnManager = GameObject.FindObjectOfType<SpawnManager>();
 			//enemySpawnPoint = GameObject.Find( "EnemySpawnPoint" ).transform;
@@ -165,7 +173,15 @@ public class GameManager : MonoBehaviour {
 			break;
 		case GameMode.Main:
 			// Once timer goes down to zero
-			if(timer <= 0) {
+			if( currLives <= 0 ) {
+				timer = 0f;
+			}
+
+			if(timer <= 0 && isGamePlaying == true ) {
+				//EndGame();
+				isGamePlaying = false;
+				gameOverText.gameObject.SetActive( true );
+				StartCoroutine( "GameOverGui" );
 				ballManager.StopAllCoroutines();
 				StopAllCoroutines();
 				timer = scoreboardTimer;
@@ -395,5 +411,59 @@ public class GameManager : MonoBehaviour {
 		default:
 			break;
 		}
+	}
+
+	public void ReduceLives( int amount ) {
+		currLives -= amount;
+	}
+
+	void EndGame() {
+		isGamePlaying = false;
+		gameOverText.gameObject.SetActive( true );
+		StartCoroutine( "GameOverGui" );
+		ballManager.StopAllCoroutines();
+		StopAllCoroutines();
+		timer = scoreboardTimer;
+		mode = GameMode.Scoreboard;
+		
+		redScoreBox.SetActive( false );
+		yellowScoreBox.SetActive( false );
+		blueScoreBox.SetActive( false );
+		greenScoreBox.SetActive( false );
+		
+//		GameObject.Find("GameCamera").camera.enabled = false;
+//		GameObject.Find("ScoreCamera").camera.enabled = true;
+		GameObject.Find("ScoreGUI").GetComponent<ScoreGUI>().Activate();
+		GameObject.Find("Timer").SetActive(false);
+		
+		for(int i = 0; i < playerManager.playerData.Count; i++) {
+			HighScoreManager.AddScore(playerManager.playerData[i].score);
+		}
+		
+		//queueManager.Reset();
+		
+		Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();
+		foreach( Enemy enemy in enemies ) {
+			enemy.StopAllCoroutines();
+			enemy.gameObject.SetActive( false );
+		}
+		
+		return;
+	}
+	
+	IEnumerator GameOverGui() {
+		Vector3 startSize = gameOverText.localScale;
+		Vector3 endSize = startSize* 2f;
+		float timer = 0f;
+		float lerpTime = 0.5f;
+
+		while( timer < 1f ) {
+			gameOverText.transform.localScale = Vector3.Lerp( startSize, endSize, timer );
+
+			timer += Time.deltaTime / lerpTime;
+			yield return null;
+		}
+		yield return new WaitForSeconds( 3 );
+		gameOverText.gameObject.SetActive( false );
 	}
 }

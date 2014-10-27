@@ -15,7 +15,17 @@ public class SpawnManager : MonoBehaviour {
 	}
 	
 	public void SpawnNewHordeEnemy() {
-		int enemyIndex = Random.Range( 0, m_enemyPrefabs.Length );
+		float rand = Random.Range( 0f, 1f );
+		int enemyIndex = 0;
+			
+		if( rand < 0.5f ) {
+			enemyIndex = 0;
+		} else if ( rand >= 0.5f && rand < 0.95f ) {
+			enemyIndex = 2;
+		} else if ( rand >= 0.95f ) {
+			enemyIndex = 1;
+		}
+
 		BaseHordeEnemy tempEnemy = StaticPool.GetObj( m_enemyPrefabs[enemyIndex] ).GetComponent<BaseHordeEnemy>();
 		tempEnemy.transform.position = m_enemySpawnPoint.transform.position;
 		tempEnemy.transform.LookAt( new Vector3( Camera.main.transform.position.x, tempEnemy.transform.position.y, Camera.main.transform.position.y ) );
