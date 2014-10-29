@@ -7,8 +7,8 @@ public class HordeEnemyDeathZone : MonoBehaviour {
 		if( col.tag == "Enemy" ) {
 			col.SendMessageUpwards ( "Reset", SendMessageOptions.DontRequireReceiver );
 
-//			if( GameManager.instance.isGamePlaying )
-//				GameManager.instance.ReduceLives( 1 );
+			if( GameManager.instance.isGamePlaying )
+				GameManager.instance.ReduceLives( 1 );
 		}
 	}
 }

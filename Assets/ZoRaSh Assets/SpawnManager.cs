@@ -5,9 +5,9 @@ public class SpawnManager : MonoBehaviour {
 	
 	HordeWaypoint m_enemySpawnPoint;
 	public GameObject[] m_enemyPrefabs;
-	public float m_spawnCooldown = 1f;
-
-	private float m_spawnTimer = 0f;
+//	public float m_spawnCooldown = 1f;
+//
+//	private float m_spawnTimer = 0f;
 
 	// Use this for initialization
 	void Awake () {
@@ -20,9 +20,9 @@ public class SpawnManager : MonoBehaviour {
 			
 		if( rand < 0.5f ) {
 			enemyIndex = 0;
-		} else if ( rand >= 0.5f && rand < 0.95f ) {
+		} else if ( rand >= 0.5f && rand < 0.9f ) {
 			enemyIndex = 2;
-		} else if ( rand >= 0.95f ) {
+		} else if ( rand >= 0.9f ) {
 			enemyIndex = 1;
 		}
 
