@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour {
 	public float guiTop = 0.8f;
 	public Transform gameOverText;
 
+	public UnityEngine.UI.Image[] HpCounters;
+	public Color missingHpIconColor;
+
 	private GameObject redScoreBox, yellowScoreBox, blueScoreBox, greenScoreBox;
 //	private GUIText redScoreTxt, redPlaceTxt, redAccTxt,
 //						yellowScoreTxt, yellowPlaceTxt, yellowAccTxt,
@@ -47,12 +50,7 @@ public class GameManager : MonoBehaviour {
 
 	BallManager ballManager;
 	PlayerManager playerManager;
-	//QueueManager queueManager;
 	SpawnManager spawnManager;
-
-//	public TextMesh scoreText;
-
-//	GUIText redGameScore, yellowGameScore, greenGameScore, purpleGameScore; //In-game score gui
 
 	IntroGUI introGUI;
 
@@ -98,14 +96,11 @@ public class GameManager : MonoBehaviour {
 			isGamePlaying = true;
 			gameOverText = GameObject.Find( "GameOverGui" ).transform;
 			gameOverText.gameObject.SetActive( true );
-			//queueManager = GameObject.Find( "QueueManager" ).GetComponent<QueueManager>();
 			spawnManager = GameObject.FindObjectOfType<SpawnManager>();
-			//enemySpawnPoint = GameObject.Find( "EnemySpawnPoint" ).transform;
 
-//			redGameScore = GameObject.Find("RedScore").GetComponent<GUIText>();
-//			yellowGameScore = GameObject.Find("YellowScore").GetComponent<GUIText>();
-//			greenGameScore = GameObject.Find("GreenScore").GetComponent<GUIText>();
-//			purpleGameScore = GameObject.Find("PurpleScore").GetComponent<GUIText>();
+			// Get Hp Gui in scene
+			HpCounters = GameObject.Find( "HpGui" ).GetComponent<HpIconHolder>().m_hpIcons;
+
 
 			redScoreBox = GameObject.Find( "InGameScoreRed" );
 			yellowScoreBox = GameObject.Find( "InGameScoreYellow" );
@@ -179,6 +174,10 @@ public class GameManager : MonoBehaviour {
 
 			if(timer <= 0 && isGamePlaying == true ) {
 				//EndGame();
+				foreach( UnityEngine.UI.Image image in HpCounters ) {
+					image.enabled = false;
+				}
+
 				isGamePlaying = false;
 				gameOverText.gameObject.SetActive( true );
 				StartCoroutine( "GameOverGui" );
@@ -357,6 +356,7 @@ public class GameManager : MonoBehaviour {
 			Application.LoadLevel("newIntro");
 			break;
 		case "Main":
+			currLives = maxLives;
 			timer = gameTimer;
 			mode = GameMode.Main;
 			Application.LoadLevel("ZombieMain");
@@ -415,6 +415,9 @@ public class GameManager : MonoBehaviour {
 
 	public void ReduceLives( int amount ) {
 		currLives -= amount;
+
+		HpCounters[currLives].color = missingHpIconColor;
+
 	}
 
 	void EndGame() {
