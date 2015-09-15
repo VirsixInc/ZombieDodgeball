@@ -1,53 +1,6 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <HighScore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <DailyScores>
-    <ScoreXML>
-      <score>26</score>
-      <time>2014-10-29T11:09:40.3031503-07:00</time>
-    </ScoreXML>
-    <ScoreXML>
-      <score>26</score>
-      <time>2014-10-29T16:28:50.2226161-07:00</time>
-    </ScoreXML>
-    <ScoreXML>
-      <score>10</score>
-      <time>2014-10-29T11:00:38.461619-07:00</time>
-    </ScoreXML>
-  </DailyScores>
-  <weeklyScores>
-    <ScoreXML>
-      <score>93</score>
-      <time>2014-10-26T01:58:02.9186041-07:00</time>
-    </ScoreXML>
-    <ScoreXML>
-      <score>69</score>
-      <time>2014-10-27T02:43:49.6048514-07:00</time>
-    </ScoreXML>
-    <ScoreXML>
-      <score>47</score>
-      <time>2014-10-25T19:42:07.5197034-07:00</time>
-    </ScoreXML>
-    <ScoreXML>
-      <score>26</score>
-      <time>2014-10-29T16:28:50.2226161-07:00</time>
-    </ScoreXML>
-  </weeklyScores>
-  <monthlyScores>
-    <ScoreXML>
-      <score>93</score>
-      <time>2014-10-26T01:58:02.9186041-07:00</time>
-    </ScoreXML>
-    <ScoreXML>
-      <score>69</score>
-      <time>2014-10-27T02:43:49.6048514-07:00</time>
-    </ScoreXML>
-    <ScoreXML>
-      <score>56</score>
-      <time>2014-10-07T03:01:21.3231689-07:00</time>
-    </ScoreXML>
-    <ScoreXML>
-      <score>26</score>
-      <time>2014-10-29T16:28:50.2226161-07:00</time>
-    </ScoreXML>
-  </monthlyScores>
+  <DailyScores />
+  <weeklyScores />
+  <monthlyScores />
 </HighScore>
