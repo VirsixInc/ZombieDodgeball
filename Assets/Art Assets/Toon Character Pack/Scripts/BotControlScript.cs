@@ -57,7 +57,7 @@ public class BotControlScript : MonoBehaviour
 			if(Input.GetButtonDown("Jump"))
 			{
 				anim.SetBool("Jump", true);
-				rigidbody.AddForce(Vector3.up*10);
+				GetComponent<Rigidbody>().AddForce(Vector3.up*10);
 			}
 		}
 		

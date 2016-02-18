@@ -6,7 +6,7 @@ public class PlayMovie : MonoBehaviour {
 	MovieTexture tex;
 
 	void Start () {
-		tex = (MovieTexture)renderer.material.mainTexture;
+		tex = (MovieTexture)GetComponent<Renderer>().material.mainTexture;
 		tex.loop = true;
 		tex.Play();
 	}

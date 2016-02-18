@@ -121,7 +121,7 @@ public class BallManager : MonoBehaviour {
 		ball.GetComponent<Ball>().Reset();
 
 		ball.transform.position = Camera.main.ScreenToWorldPoint(startPos);
-		ball.rigidbody.velocity = Vector3.zero;
+		ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
 		PlayerManager.IncreaseShots(shootData.color);
 
@@ -129,14 +129,14 @@ public class BallManager : MonoBehaviour {
 		shootDir.Normalize();
 
 		if(DebugMode.FORWARDMODE) {
-			ball.rigidbody.AddForce(Vector3.forward * (shootStrength + DebugMode.FORCECHANGE));
+			ball.GetComponent<Rigidbody>().AddForce(Vector3.forward * (shootStrength + DebugMode.FORCECHANGE));
 		} else {
-			ball.rigidbody.AddForce(shootDir * (shootStrength + DebugMode.FORCECHANGE));
+			ball.GetComponent<Rigidbody>().AddForce(shootDir * (shootStrength + DebugMode.FORCECHANGE));
 		}
 			
 //		Debug.Break();
 
-		ball.rigidbody.useGravity = DebugMode.GRAVITY;
+		ball.GetComponent<Rigidbody>().useGravity = DebugMode.GRAVITY;
 //		Destroy (ball, 10f);
 	}
 }

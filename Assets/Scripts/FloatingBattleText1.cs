@@ -41,7 +41,7 @@ public class FloatingBattleText1 : MonoBehaviour {
 	}
 	
 	public void ShowText(Vector3 tar, float dmg, Color clr) {
-		renderer.material.color = clr;
+		GetComponent<Renderer>().material.color = clr;
 		target = tar;
 		isActive = true;
 		timer = 0.0f;

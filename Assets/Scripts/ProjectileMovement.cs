@@ -38,7 +38,7 @@ public class ProjectileMovement : MonoBehaviour {
 
             if (Vector3.Distance(positionOnScreen, transform.position) > 5.0F)
             {
-                rigidbody.velocity = transform.TransformDirection(new Vector3(0, shootSpeed / 1.5F, shootSpeed));
+                GetComponent<Rigidbody>().velocity = transform.TransformDirection(new Vector3(0, shootSpeed / 1.5F, shootSpeed));
             }
             else if (Vector3.Distance(positionOnScreen, transform.position) < 3.0F)
             {

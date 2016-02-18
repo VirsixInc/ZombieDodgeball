@@ -1,6 +1,6 @@
 //--------------------------------------------
 // Movie Player
-// Copyright © 2014 SHUU Games
+// Copyright Â© 2014 SHUU Games
 //--------------------------------------------
 
 using UnityEngine;
@@ -179,7 +179,7 @@ public abstract class MoviePlayerBase : MonoBehaviour
 	{
 		if(movie != null) {
 			// stop the audio
-			if(audio != null) audio.Stop();
+			if(GetComponent<AudioSource>() != null) GetComponent<AudioSource>().Stop();
 
 			// unload all other resources associated with the movie
 			MoviePlayerUtil.Unload(movie);
@@ -218,19 +218,19 @@ public abstract class MoviePlayerBase : MonoBehaviour
 		// if there is audio, bind it to the AudioSource component.
 		// if AudioSource is not there, then it is added automatically
 		if (audiobuffer != null) {
-			if (audio == null) {
+			if (GetComponent<AudioSource>() == null) {
 				gameObject.AddComponent<AudioSource> ();
 			}
-			audio.clip = audiobuffer;
-			audio.playOnAwake = false;
+			GetComponent<AudioSource>().clip = audiobuffer;
+			GetComponent<AudioSource>().playOnAwake = false;
 			#if MP_DEBUG
 			Debug.Log("Audio buffer bound to GameObject's AudioSource");
 			#endif
 		}
 		// if there's no audio in the movie, but there is AudioSource component, then stop whatever is playing there
-		else if(audio != null) {
-			audio.Stop();
-			audio.clip = null;
+		else if(GetComponent<AudioSource>() != null) {
+			GetComponent<AudioSource>().Stop();
+			GetComponent<AudioSource>().clip = null;
 			#if MP_DEBUG
 			Debug.Log("Removed audio buffer from GameObject's AudioSource");
 			#endif
@@ -280,10 +280,10 @@ public abstract class MoviePlayerBase : MonoBehaviour
 				#endif
 				if (OnPlay != null)
 					OnPlay (this);
-				if (audio != null) {
-					audio.Play ();
+				if (GetComponent<AudioSource>() != null) {
+					GetComponent<AudioSource>().Play ();
 					if(this is MoviePlayer) {
-						audio.time = ((MoviePlayer)this).videoTime;
+						GetComponent<AudioSource>().time = ((MoviePlayer)this).videoTime;
 					}
 				}
 			} else {
@@ -292,8 +292,8 @@ public abstract class MoviePlayerBase : MonoBehaviour
 				#endif
 				if (OnStop != null)
 					OnStop (this);
-				if (audio != null) {
-					audio.Stop ();
+				if (GetComponent<AudioSource>() != null) {
+					GetComponent<AudioSource>().Stop ();
 				}
 			}
 			lastPlay = play;

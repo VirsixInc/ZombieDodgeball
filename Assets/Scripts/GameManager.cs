@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour {
 
 			StartCoroutine ("SpawnEnemy");
 			//StartCoroutine( "StartEnemyMove" );
-			GameObject.Find("GameCamera").camera.enabled = true;
+			GameObject.Find("GameCamera").GetComponent<Camera>().enabled = true;
 //			GameObject.Find("ScoreCamera").camera.enabled = false;
 			GameObject.Find("Timer").SetActive(true);
 
@@ -312,7 +312,7 @@ public class GameManager : MonoBehaviour {
 			if(mode == GameMode.Intro) {
 				introGUI.TurnOnColor(color);
 				timer = joinTimer;
-				introGUI.timerText.animation.Stop();
+				introGUI.timerText.GetComponent<Animation>().Stop();
 				introGUI.timerText.transform.rotation = Quaternion.identity;
 			}
 		}

@@ -17,7 +17,7 @@ public class Timer : MonoBehaviour {
 
 		textMesh = GetComponent<TextMesh>();
 		transform.LookAt (Camera.main.transform.position + Camera.main.transform.forward * 1000f);
-		textMesh.renderer.sortingOrder = 15;
+		textMesh.GetComponent<Renderer>().sortingOrder = 15;
 	}
 
 	void Update () {

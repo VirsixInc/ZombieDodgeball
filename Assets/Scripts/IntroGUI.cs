@@ -104,13 +104,13 @@ public class IntroGUI : MonoBehaviour {
 		FormatScores(highScores.weeklyScores, weeklyScores);
 		FormatScores(highScores.monthlyScores, monthlyScores);
 
-		dailyScores.renderer.sortingOrder = 5;
-		weeklyScores.renderer.sortingOrder = 5;
-		monthlyScores.renderer.sortingOrder = 5;
+		dailyScores.GetComponent<Renderer>().sortingOrder = 5;
+		weeklyScores.GetComponent<Renderer>().sortingOrder = 5;
+		monthlyScores.GetComponent<Renderer>().sortingOrder = 5;
 
-		GameObject.Find("Daily Title").renderer.sortingOrder = 5;
-		GameObject.Find("Weekly Title").renderer.sortingOrder = 5;
-		GameObject.Find("Monthly Title").renderer.sortingOrder = 5;
+		GameObject.Find("Daily Title").GetComponent<Renderer>().sortingOrder = 5;
+		GameObject.Find("Weekly Title").GetComponent<Renderer>().sortingOrder = 5;
+		GameObject.Find("Monthly Title").GetComponent<Renderer>().sortingOrder = 5;
 
 		score.SetActive(false);
 

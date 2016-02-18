@@ -11,9 +11,9 @@ public class Light_animation : MonoBehaviour {
 	private float lightIntensity;
 	// Use this for initialization
 	void Start () {
-		curIntense=light.intensity;
-		lastIntense=light.intensity;
-		lightIntensity=light.intensity;
+		curIntense=GetComponent<Light>().intensity;
+		lastIntense=GetComponent<Light>().intensity;
+		lightIntensity=GetComponent<Light>().intensity;
 	}
 	
 	// Update is called once per frame
@@ -28,6 +28,6 @@ public class Light_animation : MonoBehaviour {
 		}
 		//LerpLight(lastIntense,curIntense);
 		lightIntensity = Mathf.Lerp(lastIntense,curIntense, timeVariations*Time.deltaTime);
-		light.intensity=lightIntensity;
+		GetComponent<Light>().intensity=lightIntensity;
 	}
 }

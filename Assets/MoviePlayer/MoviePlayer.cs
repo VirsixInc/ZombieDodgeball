@@ -1,6 +1,6 @@
 //--------------------------------------------
 // Movie Player
-// Copyright © 2014 SHUU Games
+// Copyright Â© 2014 SHUU Games
 //--------------------------------------------
 
 using UnityEngine;
@@ -226,17 +226,17 @@ public class MoviePlayer : MoviePlayerBase
 
 	protected void HandleAudioSync ()
 	{
-		if (audio == null || !audio.enabled || audio.clip == null)
+		if (GetComponent<AudioSource>() == null || !GetComponent<AudioSource>().enabled || GetComponent<AudioSource>().clip == null)
 			return;
 		
-		if (videoTime <= audio.clip.length && (Mathf.Abs (videoTime - audio.time) > (float)maxSyncErrorFrames / framerate))
+		if (videoTime <= GetComponent<AudioSource>().clip.length && (Mathf.Abs (videoTime - GetComponent<AudioSource>().time) > (float)maxSyncErrorFrames / framerate))
 		{
 			#if MP_DEBUG
 			Debug.Log ("Synchronizing audio and video. Drift: " + (videoTime - audio.time));
 			#endif
-			audio.Stop ();
-			audio.time = videoTime;
-			audio.Play ();
+			GetComponent<AudioSource>().Stop ();
+			GetComponent<AudioSource>().time = videoTime;
+			GetComponent<AudioSource>().Play ();
 			_syncEvents++;
 		}
 	}

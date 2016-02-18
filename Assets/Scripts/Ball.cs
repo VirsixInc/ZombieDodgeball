@@ -18,14 +18,14 @@ public class Ball : MonoBehaviour {
 
 	void Start() {
 		audioSource = GetComponent<AudioSource>();
-		rigidbody.AddTorque(Random.onUnitSphere * 10);
+		GetComponent<Rigidbody>().AddTorque(Random.onUnitSphere * 10);
 		Reset();
 	}
 
 	void Update() {
 		if (Time.time < impactEndTime) {
 //			if(impactTarget != null)
-				if(impactTarget.rigidbody != null)
+				if(impactTarget.GetComponent<Rigidbody>() != null)
 					impactTarget.AddForce(impact, ForceMode.VelocityChange);
 		}
 		if(Time.time > lifeEndTime) {
@@ -53,7 +53,7 @@ public class Ball : MonoBehaviour {
 				impactTarget = col.rigidbody;
 				
 				//impact direction also according to the ray
-				impact = rigidbody.velocity * 0.5f;
+				impact = GetComponent<Rigidbody>().velocity * 0.5f;
 				
 				//the impact will be reapplied for the next 100ms
 				//to make the connected objects follow even though the simulated body joints
@@ -86,9 +86,9 @@ public class Ball : MonoBehaviour {
 //				}
 			}
 
-			rigidbody.velocity = Vector3.zero;
-			rigidbody.AddForce((transform.position - col.contacts[0].point).normalized * 200f);
-			rigidbody.useGravity = true;
+			GetComponent<Rigidbody>().velocity = Vector3.zero;
+			GetComponent<Rigidbody>().AddForce((transform.position - col.contacts[0].point).normalized * 200f);
+			GetComponent<Rigidbody>().useGravity = true;
 		}
 	}
 
