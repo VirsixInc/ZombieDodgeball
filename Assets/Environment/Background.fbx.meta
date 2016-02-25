@@ -9,16 +9,21 @@ ModelImporter:
     100002: //RootNode
     100004: BackgroundPlane_1
     100006: SkyHemisphere
+    100008: BackgroundPlane_2
     400000: Background
     400002: //RootNode
     400004: BackgroundPlane_1
     400006: SkyHemisphere
+    400008: BackgroundPlane_2
     2300000: BackgroundPlane_1
     2300002: SkyHemisphere
+    2300004: BackgroundPlane_2
     3300000: BackgroundPlane_1
     3300002: SkyHemisphere
+    3300004: BackgroundPlane_2
     4300000: BackgroundPlane_1
     4300002: SkyHemisphere
+    4300004: BackgroundPlane_2
   materials:
     importMaterials: 1
     materialName: 0
