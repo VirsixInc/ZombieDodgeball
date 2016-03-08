@@ -13,6 +13,9 @@ ModelImporter:
     100010: group2
     100012: Pylon_1
     100014: Pylon_2
+    100016: ArchHalf_1 1
+    100018: group4
+    100020: Pylon_1 1
     400000: ArchHalf_1
     400002: ArchHalf_2
     400004: Gate
@@ -21,18 +24,33 @@ ModelImporter:
     400010: group2
     400012: Pylon_1
     400014: Pylon_2
+    400016: ArchHalf_1 1
+    400018: group4
+    400020: Pylon_1 1
     2300000: ArchHalf_1
     2300002: ArchHalf_2
     2300004: Pylon_1
     2300006: Pylon_2
+    2300008: ArchHalf_1 1
+    2300010: Pylon_1 1
     3300000: ArchHalf_1
     3300002: ArchHalf_2
     3300004: Pylon_1
     3300006: Pylon_2
+    3300008: ArchHalf_1 1
+    3300010: Pylon_1 1
     4300000: ArchHalf_1
     4300002: Pylon_1
     4300004: ArchHalf_2
     4300006: Pylon_2
+    4300008: ArchHalf_1
+    4300010: Pylon_1
+    6400000: ArchHalf_1
+    6400002: ArchHalf_2
+    6400004: Pylon_1
+    6400006: Pylon_2
+    6400008: ArchHalf_1 1
+    6400010: Pylon_1 1
   materials:
     importMaterials: 1
     materialName: 0
@@ -59,7 +77,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
