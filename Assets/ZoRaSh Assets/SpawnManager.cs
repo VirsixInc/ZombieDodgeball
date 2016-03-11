@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpawnManager : MonoBehaviour {
-	
+public class SpawnManager : MonoBehaviour 
+{
+	public MovementNode spawnNode;
+	public MovementNode flyingSpawnNode;
+
 	HordeWaypoint m_enemySpawnPoint;
 	public GameObject[] m_enemyPrefabs;
 //	public float m_spawnCooldown = 1f;
@@ -10,11 +13,13 @@ public class SpawnManager : MonoBehaviour {
 //	private float m_spawnTimer = 0f;
 
 	// Use this for initialization
-	void Awake () {
-		m_enemySpawnPoint = GameObject.Find( "SpawnPoint" ).GetComponent<HordeWaypoint>();
+	void Awake () 
+	{
+		//m_enemySpawnPoint = GameObject.Find( "SpawnPoint" ).GetComponent<HordeWaypoint>();
 	}
 	
-	public void SpawnNewHordeEnemy() {
+	public void SpawnNewHordeEnemy() 
+	{
 		float rand = Random.Range( 0f, 1f );
 		int enemyIndex = 0;
 			
@@ -25,10 +30,16 @@ public class SpawnManager : MonoBehaviour {
 		} else if ( rand >= 0.9f ) {
 			enemyIndex = 1;
 		}
-
-		BaseHordeEnemy tempEnemy = StaticPool.GetObj( m_enemyPrefabs[enemyIndex] ).GetComponent<BaseHordeEnemy>();
-		tempEnemy.transform.position = m_enemySpawnPoint.transform.position;
-		tempEnemy.transform.LookAt( new Vector3( Camera.main.transform.position.x, tempEnemy.transform.position.y, Camera.main.transform.position.y ) );
-
-		tempEnemy.StartMoving( m_enemySpawnPoint );	}
+//
+//		BaseHordeEnemy tempEnemy = StaticPool.GetObj( m_enemyPrefabs[enemyIndex] ).GetComponent<BaseHordeEnemy>();
+//		tempEnemy.transform.position = m_enemySpawnPoint.transform.position;
+//		tempEnemy.transform.LookAt( new Vector3( Camera.main.transform.position.x, tempEnemy.transform.position.y, Camera.main.transform.position.y ) );
+//
+//		tempEnemy.StartMoving( m_enemySpawnPoint );	
+		BaseEnemy enemy = StaticPool.GetObj( m_enemyPrefabs[enemyIndex] ).GetComponent<BaseEnemy>();
+		if( enemyIndex == 2 )
+			enemy.InitialSetup( flyingSpawnNode );
+		else
+			enemy.InitialSetup( spawnNode );
+	}
 }
