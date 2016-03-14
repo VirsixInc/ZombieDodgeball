@@ -14,6 +14,8 @@ public class BaseEnemy: MonoBehaviour
 	MovementNode currNode;
 	float distToNode;
 	float timer = 0.0f;
+	float deathTime = 2f;
+	bool dead = false;
 
 
 	void Start () 
@@ -23,7 +25,14 @@ public class BaseEnemy: MonoBehaviour
 
 	protected virtual void Update () 
 	{
-		if( moving )
+		if( dead )
+		{
+			if( timer >= 2f )
+			{
+				Reset();
+			}
+		}
+		else if( moving )
 		{
 			float lerpPercentage = timer * speed / ( distToNode );
 
@@ -34,9 +43,8 @@ public class BaseEnemy: MonoBehaviour
 				MovementCheck();
 				GetNextNode();
 			}
-
-			timer += Time.deltaTime;
 		}
+		timer += Time.deltaTime;
 	}
 
 	protected virtual void Reset() 
@@ -77,8 +85,9 @@ public class BaseEnemy: MonoBehaviour
 			hasBeenHit = true;
 //			m_animator.enabled = false;
 //			m_navmeshAgent.Stop();
-//			m_dead = true;
+			dead = true;
 			moving = false;
+			timer = 0.0f;
 			GetComponent<Animator>().SetBool( "Dead", true );
 		}
 	}
@@ -113,5 +122,6 @@ public class BaseEnemy: MonoBehaviour
 		GetNextNode();
 		moving = true;
 		hasBeenHit = false;
+		dead = false;
 	}
 }

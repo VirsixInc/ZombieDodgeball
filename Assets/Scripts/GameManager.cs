@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour {
 	public float gameTimer = 180f;
 	public float scoreboardTimer = 15f;
 
+	bool inBetweenRounds = false;
+	int round = 1;
+	const int maxRounds = 8;
+
 	[System.NonSerialized]
 	public float timer = 0f;
 
@@ -107,11 +111,13 @@ public class GameManager : MonoBehaviour {
 			blueScoreBox = GameObject.Find( "InGameScoreBlue" );
 			greenScoreBox = GameObject.Find( "InGameScoreGreen" );
 
-			StartCoroutine ("SpawnEnemy");
+//			StartCoroutine ("SpawnEnemy");
+			StartNextRound();
 			//StartCoroutine( "StartEnemyMove" );
 			GameObject.Find("GameCamera").GetComponent<Camera>().enabled = true;
 //			GameObject.Find("ScoreCamera").camera.enabled = false;
-			GameObject.Find("Timer").SetActive(true);
+			//GameObject.Find("Timer").SetActive(true);
+			GameObject.Find("Timer").SetActive(false);
 
 			TextMesh[] texts = redScoreBox.GetComponentsInChildren<TextMesh>();			
 			foreach( TextMesh text in texts ) {
@@ -168,48 +174,59 @@ public class GameManager : MonoBehaviour {
 			break;
 		case GameMode.Main:
 			// Once timer goes down to zero
-			if( currLives <= 0 ) {
-				timer = 0f;
+			if( currLives <= 0 ) 
+			{
+				EndGame();
+				//timer = 0f;
 			}
 
-			if(timer <= 0 && isGamePlaying == true ) {
-				//EndGame();
-				foreach( UnityEngine.UI.Image image in HpCounters ) {
-					image.enabled = false;
-				}
+			if( inBetweenRounds )
+			{
+				if( timer <= 0.0f )
+					StartNextRound();
 
-				isGamePlaying = false;
-				gameOverText.gameObject.SetActive( true );
-				StartCoroutine( "GameOverGui" );
-				ballManager.StopAllCoroutines();
-				StopAllCoroutines();
-				timer = scoreboardTimer;
-				mode = GameMode.Scoreboard;
-
-				redScoreBox.SetActive( false );
-				yellowScoreBox.SetActive( false );
-				blueScoreBox.SetActive( false );
-				greenScoreBox.SetActive( false );
-
-//				GameObject.Find("GameCamera").camera.enabled = false;
-//				GameObject.Find("ScoreCamera").camera.enabled = true;
-				GameObject.Find("ScoreGUI").GetComponent<ScoreGUI>().Activate();
-				GameObject.Find("Timer").SetActive(false);
-
-				for(int i = 0; i < playerManager.playerData.Count; i++) {
-					HighScoreManager.AddScore(playerManager.playerData[i].score);
-				}
-
-				//queueManager.Reset();
-
-				Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();
-				foreach( Enemy enemy in enemies ) {
-					enemy.StopAllCoroutines();
-					enemy.gameObject.SetActive( false );
-				}
-
-				return;
+				timer -= Time.deltaTime;
 			}
+
+//			if(timer <= 0 && isGamePlaying == true ) 
+//			{
+//				//EndGame();
+//				foreach( UnityEngine.UI.Image image in HpCounters ) {
+//					image.enabled = false;
+//				}
+//
+//				isGamePlaying = false;
+//				gameOverText.gameObject.SetActive( true );
+//				StartCoroutine( "GameOverGui" );
+//				ballManager.StopAllCoroutines();
+//				StopAllCoroutines();
+//				timer = scoreboardTimer;
+//				mode = GameMode.Scoreboard;
+//
+//				redScoreBox.SetActive( false );
+//				yellowScoreBox.SetActive( false );
+//				blueScoreBox.SetActive( false );
+//				greenScoreBox.SetActive( false );
+//
+////				GameObject.Find("GameCamera").camera.enabled = false;
+////				GameObject.Find("ScoreCamera").camera.enabled = true;
+//				GameObject.Find("ScoreGUI").GetComponent<ScoreGUI>().Activate();
+//				GameObject.Find("Timer").SetActive(false);
+//
+//				for(int i = 0; i < playerManager.playerData.Count; i++) {
+//					HighScoreManager.AddScore(playerManager.playerData[i].score);
+//				}
+//
+//				//queueManager.Reset();
+//
+//				Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();
+//				foreach( Enemy enemy in enemies ) {
+//					enemy.StopAllCoroutines();
+//					enemy.gameObject.SetActive( false );
+//				}
+//
+//				return;
+//			}
 
 			// Update score gui
 			if( redScoreBox.activeSelf == false && playerManager.Added( PlayerColor.Red ))
@@ -257,7 +274,7 @@ public class GameManager : MonoBehaviour {
 				}
 			}
 
-			timer -= Time.deltaTime;
+			//timer -= Time.deltaTime;
 			break;
 		case GameMode.Scoreboard:
 			if(timer <= 0) {
@@ -329,13 +346,31 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	IEnumerator SpawnEnemy() {
-		while(true) {
-			//queueManager.SpawnNewEnemy( enemy );
-			spawnManager.SpawnNewHordeEnemy();
-			yield return new WaitForSeconds( spawnRate );
+	public void RoundOver() //called by spawner manager when wave is over
+	{
+		round ++;
+		if( round >= maxRounds )
+		{
+			//EndGame();
+			return;
 		}
+		timer = 8f;
+		inBetweenRounds = true;
 	}
+
+	void StartNextRound()
+	{
+		inBetweenRounds = false;
+		spawnManager.NewSpawnRound( round );
+	}
+
+//	IEnumerator SpawnEnemy() {
+//		while(true) {
+//			//queueManager.SpawnNewEnemy( enemy );
+//			//spawnManager.SpawnNewHordeEnemy();
+//			yield return new WaitForSeconds( spawnRate );
+//		}
+//	}
 
 	IEnumerator StartEnemyMove() {
 		while( true ) {
@@ -357,7 +392,7 @@ public class GameManager : MonoBehaviour {
 			break;
 		case "Main":
 			currLives = maxLives;
-			timer = gameTimer;
+			//timer = gameTimer;
 			mode = GameMode.Main;
 			Application.LoadLevel("ZombieMain");
 			break;
@@ -437,7 +472,7 @@ public class GameManager : MonoBehaviour {
 //		GameObject.Find("GameCamera").camera.enabled = false;
 //		GameObject.Find("ScoreCamera").camera.enabled = true;
 		GameObject.Find("ScoreGUI").GetComponent<ScoreGUI>().Activate();
-		GameObject.Find("Timer").SetActive(false);
+//		GameObject.Find("Timer").SetActive(false);
 		
 		for(int i = 0; i < playerManager.playerData.Count; i++) {
 			HighScoreManager.AddScore(playerManager.playerData[i].score);
