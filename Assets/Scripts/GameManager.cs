@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
 
 	private static GameManager _instance;
 
-	enum GameMode {Intro, Main, Scoreboard}
+	enum GameMode {Intro, Main, Scoreboard, Config}
 
 	public int maxLives = 10;
 	private int currLives;
@@ -96,10 +96,14 @@ public class GameManager : MonoBehaviour {
 //		guiStyle = new GUIStyle();
 	}
 
-	void OnLevelWasLoaded(int level) {
-		if(level == 0) {
+	void OnLevelWasLoaded(int level) 
+	{
+		if(level == 0) 
+		{
 			introGUI = GameObject.Find("IntroGUI").GetComponent<IntroGUI>();
-		} else if(level == 1) {
+		} 
+		else if(level == 1) 
+		{
 			isGamePlaying = true;
 			gameOverText = GameObject.Find( "GameOverGui" ).transform;
 			gameOverText.gameObject.SetActive( true );
@@ -159,6 +163,10 @@ public class GameManager : MonoBehaviour {
 //			greenScoreBox.SetActive( false );
 
 //			scoreText = GameObject.Find("ScoreText").GetComponent<TextMesh>();
+		}
+		else if( level == 2 ) //config
+		{
+			mode = GameMode.Config;
 		}
 	}
 
@@ -410,6 +418,51 @@ public class GameManager : MonoBehaviour {
 //			message.Values[2] = "Red";
 			BallHit(message.Values);  
 		}
+
+		if(message.Address == "/config/done") 
+		{
+	//		print ("config done");
+			if(mode == GameMode.Config)
+				Application.LoadLevel("Intro");
+			//mode = GameMode.STANDBY;
+		} 
+		else if(message.Address == "/config/start") 
+		{
+			if(mode != GameMode.Config) 
+			{
+//				StopAllCoroutines();
+//				Enemy[] enemies = FindObjectsOfType<Enemy>();
+//				foreach(Enemy enemy in enemies) 
+//				{
+//					enemy.StopAllCoroutines();
+//				}
+//
+//				Spider[] spiders = FindObjectsOfType<Spider>();
+//				foreach(Spider spider in spiders) 
+//				{
+//					spider.StopAllCoroutines();
+//				}
+//
+//				StaticPool.DestroyAllObjects();
+
+				//mode = GameMode.CONFIG;
+				Application.LoadLevel("Config");
+			}
+		} 
+//		else if(message.Address == "/config/noKinect") 
+//		{
+//			if(mode == GameMode.CONFIG) 
+//			{
+//				kinectErrorObj.SetActive(true);
+//			}
+//		} 
+//		else if(message.Address == "/config/kinectFound") 
+//		{
+//			if(mode == GameMode.CONFIG) 
+//			{
+//				kinectErrorObj.SetActive(false);
+//			}
+//		}
 //    	if(message.Address == "/endGame"){
 //      		AdjustGameSetting("Quit Game", true);
 //      		timer = 0;
