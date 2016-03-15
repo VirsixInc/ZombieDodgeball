@@ -9,25 +9,25 @@ public class BaseEnemy: MonoBehaviour
 
 	protected bool moving;
 	protected bool hasBeenHit = false;
+	protected float deathTime;
 
 	MovementNode prevNode;
 	MovementNode currNode;
 	float distToNode;
 	float timer = 0.0f;
-	float deathTime = 2f;
 	bool dead = false;
 
 
-	void Start () 
+	protected virtual void Start () 
 	{
-		
+		deathTime = 2f;
 	}
 
 	protected virtual void Update () 
 	{
 		if( dead )
 		{
-			if( timer >= 2f )
+			if( timer >= deathTime )
 			{
 				Reset();
 			}

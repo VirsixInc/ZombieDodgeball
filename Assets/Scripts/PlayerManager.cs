@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public enum PlayerColor {
 	Green, Blue, Red, Yellow
 	//Red, Yellow, Blue, Green
 }
 
-public class PlayerManager : MonoBehaviour {
-
+public class PlayerManager : MonoBehaviour 
+{
 	public class PlayerData {
 		public PlayerData(PlayerColor p_color) {
 			color = p_color;
@@ -22,6 +23,9 @@ public class PlayerManager : MonoBehaviour {
 	public List<PlayerData> playerData;
 
 	static PlayerManager s_instance;
+
+	Text redScoreText;
+	Text greenScoreText;
 
 	void Start () {
 		playerData = new List<PlayerData> ();
@@ -69,12 +73,36 @@ public class PlayerManager : MonoBehaviour {
 		}
 	}
 
-	public static void AddPoints(PlayerColor color, int pts) {
-		foreach(PlayerData player in s_instance.playerData){
-			if(player.color == color) {
+	public static void AddPoints(PlayerColor color, int pts) 
+	{
+		foreach(PlayerData player in s_instance.playerData)
+		{
+			if(player.color == color) 
+			{
 				player.score += pts;
+				s_instance.SetScoreText( player.score, player.color);
 				return;
 			}
 		}
+	}
+
+	public void SetScoreText( int score, PlayerColor color )
+	{
+		if( color == PlayerColor.Red )
+		{
+			redScoreText.text = score.ToString();
+		}
+		else if( color == PlayerColor.Green )
+		{
+			greenScoreText.text = score.ToString();
+		}
+	}
+
+	public void GetText()
+	{
+		redScoreText = GameObject.Find("Red Score Text").GetComponent<Text>();
+		greenScoreText = GameObject.Find("Green Score Text").GetComponent<Text>();
+		redScoreText.text = "0";
+		greenScoreText.text = "0";
 	}
 }
