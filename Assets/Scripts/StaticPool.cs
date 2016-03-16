@@ -62,6 +62,21 @@ public class StaticPool {
 
 	}
 
+	public static bool AllEnemiesDeadCheck(GameObject prefab)
+	{
+		if( !s_instance.objLists.ContainsKey(prefab) )
+			return false;
+
+		for(int i = 0, n = s_instance.objLists[prefab].Count; i < n; i++) 
+		{
+			if(s_instance.objLists[prefab][i].activeSelf == true) 
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
 	static void AddToList(GameObject prefab, int count, Transform holder) {
 		for(int i = 0; i < count; i++) {
 			GameObject obj = (GameObject)GameObject.Instantiate(prefab, Vector3.one * 1000f, Quaternion.identity);

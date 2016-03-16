@@ -68,12 +68,24 @@ public class SpawnManager : MonoBehaviour
 		spawnTimer = 0.0f;
 	}
 
+	public bool WaveOverCheck()
+	{
+		bool waveOver = true;
+
+		foreach(GameObject go in m_enemyPrefabs)
+		{
+			waveOver = StaticPool.AllEnemiesDeadCheck( go ) && waveOver;
+		}
+
+		return waveOver;
+	}
+
 	void RoundOverCheck()
 	{
 		if( bzLeft + fzLeft + wwLeft <= 0 )
 		{
 			spawning = false;
-			GameManager.instance.RoundOver();
+			//GameManager.instance.RoundOver();
 		}
 	}
 	

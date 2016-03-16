@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour {
 	PlayerManager playerManager;
 	SpawnManager spawnManager;
 
-	IntroGUI introGUI;
+//	IntroGUI introGUI;
 
 	StaticPool staticPool;
 
@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour {
 
 	void Start() {
 		currLives = maxLives;
-		introGUI = GameObject.Find("IntroGUI").GetComponent<IntroGUI>();
+//		introGUI = GameObject.Find("IntroGUI").GetComponent<IntroGUI>();
 		ballManager = GetComponent<BallManager> ();
 		playerManager = GetComponent<PlayerManager> ();
 
@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour {
 	{
 		if(level == 0) 
 		{
-			introGUI = GameObject.Find("IntroGUI").GetComponent<IntroGUI>();
+//			introGUI = GameObject.Find("IntroGUI").GetComponent<IntroGUI>();
 		} 
 		else if(level == 1) 
 		{
@@ -121,17 +121,19 @@ public class GameManager : MonoBehaviour {
 			// Get Hp Gui in scene
 			HpCounters = GameObject.Find( "HpGui" ).GetComponent<HpIconHolder>().m_hpIcons;
 
+
+			gameOverUI = GameObject.Find("GameOver_Canvas");
 			waveText = GameObject.Find("Wave Text").GetComponent<Text>();
 			redScoreText = GameObject.Find("Red Score").GetComponent<Text>();
 			greenScoreText = GameObject.Find("Green Score").GetComponent<Text>();
 			waveAchievedText = GameObject.Find("Wave").GetComponent<Text>();
 			highScoreText = GameObject.Find("HighScore").GetComponent<Text>();
 			continueTimeText = GameObject.Find("ContinueTime").GetComponent<Text>();
-			gameOverUI = GameObject.Find("GameOver_Canvas");
 			greenCircle = GameObject.Find("Moon Green").GetComponent<Image>();
 			redCircle = GameObject.Find("Moon Red").GetComponent<Image>();
-			gameOverUI.SetActive(false);
 			playerManager.GetText();
+
+			gameOverUI.SetActive(false);
 
 //			redScoreBox = GameObject.Find( "InGameScoreRed" );
 //			yellowScoreBox = GameObject.Find( "InGameScoreYellow" );
@@ -197,7 +199,7 @@ public class GameManager : MonoBehaviour {
 
 			if(gameStarted) {
 				if(timer > 0f) {
-					introGUI.timerText.text = "Game starts in: " + Mathf.CeilToInt(timer);
+//					introGUI.timerText.text = "Game starts in: " + Mathf.CeilToInt(timer);
 					timer -= Time.deltaTime;
 					if(timer <= 0f) {
 						ChangeScene( "Main" );
@@ -220,6 +222,10 @@ public class GameManager : MonoBehaviour {
 					StartNextRound();
 
 				timer -= Time.deltaTime;
+			}
+			else if( spawnManager.WaveOverCheck() )
+			{
+				RoundOver();
 			}
 
 //			if(timer <= 0 && isGamePlaying == true ) 
@@ -317,11 +323,17 @@ public class GameManager : MonoBehaviour {
 				int redScore = playerManager.GetScore(PlayerColor.Red);
 				int greenScore = playerManager.GetScore(PlayerColor.Green);
 				float combinedScore = (float)( greenScore + redScore );
-				gameOverAnimDone = true;
-				greenCircle.fillAmount = Mathf.Lerp( 0, greenScore/combinedScore, scoreboardTimer - timer - 2);
-				redCircle.fillAmount = Mathf.Lerp( 0, redScore/combinedScore, scoreboardTimer - timer - 2);
-			}
 
+				if( combinedScore > 0 )
+				{
+					greenCircle.fillAmount = Mathf.Lerp( 0, greenScore/combinedScore, scoreboardTimer - timer - 2);
+					redCircle.fillAmount = Mathf.Lerp( 0, redScore/combinedScore, scoreboardTimer - timer - 2);
+				}
+
+				if( scoreboardTimer - timer - 2 >= 1 )
+					gameOverAnimDone = true;
+			}
+			continueTimeText.text = ((int)timer).ToString();
 			if(timer <= 0) {
 				ChangeScene( "Intro" );
 				return;
@@ -376,10 +388,10 @@ public class GameManager : MonoBehaviour {
 		if(!playerManager.Added(color)) {
 			playerManager.AddPlayer(color);
 			if(mode == GameMode.Intro) {
-				introGUI.TurnOnColor(color);
+//				introGUI.TurnOnColor(color);
 				timer = joinTimer;
-				introGUI.timerText.GetComponent<Animation>().Stop();
-				introGUI.timerText.transform.rotation = Quaternion.identity;
+//				introGUI.timerText.GetComponent<Animation>().Stop();
+//				introGUI.timerText.transform.rotation = Quaternion.identity;
 			}
 		}
 		if(!gameStarted) {
@@ -398,12 +410,12 @@ public class GameManager : MonoBehaviour {
 	public void RoundOver() //called by spawner manager when wave is over
 	{
 		round ++;
-		if( round >= maxRounds )
+		if( round > maxRounds )
 		{
-			//EndGame();
+			EndGame();
 			return;
 		}
-		timer = 8f;
+		timer = 3f;
 		inBetweenRounds = true;
 	}
 
@@ -565,6 +577,15 @@ public class GameManager : MonoBehaviour {
 
 		gameOverUI.SetActive(true);
 		gameOverAnimDone = false;
+
+		redScoreText.text = playerManager.GetScore(PlayerColor.Red).ToString();
+		greenScoreText.text = playerManager.GetScore(PlayerColor.Green).ToString();
+		waveAchievedText.text = round.ToString();
+		continueTimeText.text = timer.ToString();
+		highScoreText.text = "99";
+
+		greenCircle.fillAmount = 0;
+		redCircle.fillAmount = 0;
 		
 //		redScoreBox.SetActive( false );
 //		yellowScoreBox.SetActive( false );
