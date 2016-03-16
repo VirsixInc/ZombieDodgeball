@@ -105,4 +105,16 @@ public class PlayerManager : MonoBehaviour
 		redScoreText.text = "0";
 		greenScoreText.text = "0";
 	}
+
+	public int GetScore( PlayerColor color )
+	{
+		foreach(PlayerData player in s_instance.playerData)
+		{
+			if(player.color == color) 
+			{
+				return player.score;
+			}
+		}
+		return 0;
+	}
 }

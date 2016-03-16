@@ -42,7 +42,16 @@ public class GameManager : MonoBehaviour {
 	public UnityEngine.UI.Image[] HpCounters;
 	public Color missingHpIconColor;
 
+	bool gameOverAnimDone = false;
 	Text waveText;
+	Text redScoreText;
+	Text greenScoreText;
+	Text highScoreText;
+	Text waveAchievedText;
+	Text continueTimeText;
+	GameObject gameOverUI;
+	Image redCircle;
+	Image greenCircle;
 
 //	private GameObject redScoreBox, yellowScoreBox, blueScoreBox, greenScoreBox;
 //	private GUIText redScoreTxt, redPlaceTxt, redAccTxt,
@@ -113,6 +122,15 @@ public class GameManager : MonoBehaviour {
 			HpCounters = GameObject.Find( "HpGui" ).GetComponent<HpIconHolder>().m_hpIcons;
 
 			waveText = GameObject.Find("Wave Text").GetComponent<Text>();
+			redScoreText = GameObject.Find("Red Score").GetComponent<Text>();
+			greenScoreText = GameObject.Find("Green Score").GetComponent<Text>();
+			waveAchievedText = GameObject.Find("Wave").GetComponent<Text>();
+			highScoreText = GameObject.Find("HighScore").GetComponent<Text>();
+			continueTimeText = GameObject.Find("ContinueTime").GetComponent<Text>();
+			gameOverUI = GameObject.Find("GameOver_Canvas");
+			greenCircle = GameObject.Find("Moon Green").GetComponent<Image>();
+			redCircle = GameObject.Find("Moon Red").GetComponent<Image>();
+			gameOverUI.SetActive(false);
 			playerManager.GetText();
 
 //			redScoreBox = GameObject.Find( "InGameScoreRed" );
@@ -174,6 +192,9 @@ public class GameManager : MonoBehaviour {
 		switch(mode)
 		{
 		case GameMode.Intro:
+			if( Input.GetKeyDown(KeyCode.K) )
+				ChangeScene("Config");
+
 			if(gameStarted) {
 				if(timer > 0f) {
 					introGUI.timerText.text = "Game starts in: " + Mathf.CeilToInt(timer);
@@ -290,11 +311,26 @@ public class GameManager : MonoBehaviour {
 			//timer -= Time.deltaTime;
 			break;
 		case GameMode.Scoreboard:
+
+			if( !gameOverAnimDone ) 
+			{
+				int redScore = playerManager.GetScore(PlayerColor.Red);
+				int greenScore = playerManager.GetScore(PlayerColor.Green);
+				float combinedScore = (float)( greenScore + redScore );
+				gameOverAnimDone = true;
+				greenCircle.fillAmount = Mathf.Lerp( 0, greenScore/combinedScore, scoreboardTimer - timer - 2);
+				redCircle.fillAmount = Mathf.Lerp( 0, redScore/combinedScore, scoreboardTimer - timer - 2);
+			}
+
 			if(timer <= 0) {
 				ChangeScene( "Intro" );
 				return;
 			}
 			timer -= Time.deltaTime;
+			break;
+		case GameMode.Config:
+			if( Input.GetKeyDown(KeyCode.I) )
+				ChangeScene("Intro");
 			break;
 		}
 	}
@@ -410,6 +446,10 @@ public class GameManager : MonoBehaviour {
 			mode = GameMode.Main;
 			Application.LoadLevel("ZombieMain");
 			break;
+		case "Config":
+			mode = GameMode.Config;
+			Application.LoadLevel("Config");
+			break;
 		}
 	}
 
@@ -423,7 +463,7 @@ public class GameManager : MonoBehaviour {
 		{
 	//		print ("config done");
 			if(mode == GameMode.Config)
-				Application.LoadLevel("Intro");
+				ChangeScene("Intro");//Application.LoadLevel("Intro");
 			//mode = GameMode.STANDBY;
 		} 
 		else if(message.Address == "/config/start") 
@@ -446,7 +486,7 @@ public class GameManager : MonoBehaviour {
 //				StaticPool.DestroyAllObjects();
 
 				//mode = GameMode.CONFIG;
-				Application.LoadLevel("Config");
+				ChangeScene("Config");//Application.LoadLevel("Config");
 			}
 		} 
 //		else if(message.Address == "/config/noKinect") 
@@ -522,6 +562,9 @@ public class GameManager : MonoBehaviour {
 		StopAllCoroutines();
 		timer = scoreboardTimer;
 		mode = GameMode.Scoreboard;
+
+		gameOverUI.SetActive(true);
+		gameOverAnimDone = false;
 		
 //		redScoreBox.SetActive( false );
 //		yellowScoreBox.SetActive( false );
@@ -530,7 +573,7 @@ public class GameManager : MonoBehaviour {
 		
 //		GameObject.Find("GameCamera").camera.enabled = false;
 //		GameObject.Find("ScoreCamera").camera.enabled = true;
-		GameObject.Find("ScoreGUI").GetComponent<ScoreGUI>().Activate();
+//		GameObject.Find("ScoreGUI").GetComponent<ScoreGUI>().Activate();
 //		GameObject.Find("Timer").SetActive(false);
 		
 		for(int i = 0; i < playerManager.playerData.Count; i++) {
