@@ -108,14 +108,14 @@ public class IntroGUI : MonoBehaviour {
 		weeklyScores.GetComponent<Renderer>().sortingOrder = 5;
 		monthlyScores.GetComponent<Renderer>().sortingOrder = 5;
 
-		GameObject.Find("Daily Title").GetComponent<Renderer>().sortingOrder = 5;
-		GameObject.Find("Weekly Title").GetComponent<Renderer>().sortingOrder = 5;
-		GameObject.Find("Monthly Title").GetComponent<Renderer>().sortingOrder = 5;
+//		GameObject.Find("Daily Title").GetComponent<Renderer>().sortingOrder = 5;
+//		GameObject.Find("Weekly Title").GetComponent<Renderer>().sortingOrder = 5;
+//		GameObject.Find("Monthly Title").GetComponent<Renderer>().sortingOrder = 5;
 
-		score.SetActive(false);
+//		score.SetActive(false);
 
 		state = State.Splash;
-		directions.SetActive(false);
+//		directions.SetActive(false);
 	}
 
 	void Update() {
