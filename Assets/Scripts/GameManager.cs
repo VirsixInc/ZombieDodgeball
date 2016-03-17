@@ -46,9 +46,13 @@ public class GameManager : MonoBehaviour {
 	Text waveText;
 	Text redScoreText;
 	Text greenScoreText;
+	Text redScoreTextShadow;
+	Text greenScoreTextShadow;
 	Text highScoreText;
 	Text waveAchievedText;
 	Text continueTimeText;
+	GameObject redCrown;
+	GameObject greenCrown;
 	GameObject gameOverUI;
 	Image redCircle;
 	Image greenCircle;
@@ -126,6 +130,10 @@ public class GameManager : MonoBehaviour {
 			waveText = GameObject.Find("Wave Text").GetComponent<Text>();
 			redScoreText = GameObject.Find("Red Score").GetComponent<Text>();
 			greenScoreText = GameObject.Find("Green Score").GetComponent<Text>();
+			redScoreTextShadow = GameObject.Find("Red Score Shadow").GetComponent<Text>();
+			greenScoreTextShadow = GameObject.Find("Green Score Shadow").GetComponent<Text>();
+			redCrown = GameObject.Find("Crown_Red");
+			greenCrown = GameObject.Find("Crown_Green");
 			waveAchievedText = GameObject.Find("Wave").GetComponent<Text>();
 			highScoreText = GameObject.Find("HighScore").GetComponent<Text>();
 			continueTimeText = GameObject.Find("ContinueTime").GetComponent<Text>();
@@ -186,6 +194,7 @@ public class GameManager : MonoBehaviour {
 		}
 		else if( level == 2 ) //config
 		{
+			OSCSender.SendEmptyMessage("/config/start");
 			mode = GameMode.Config;
 		}
 	}
@@ -194,7 +203,7 @@ public class GameManager : MonoBehaviour {
 		switch(mode)
 		{
 		case GameMode.Intro:
-			if( Input.GetKeyDown(KeyCode.K) )
+			if( Input.GetKeyDown(KeyCode.C) )
 				ChangeScene("Config");
 
 			if(gameStarted) {
@@ -341,7 +350,7 @@ public class GameManager : MonoBehaviour {
 			timer -= Time.deltaTime;
 			break;
 		case GameMode.Config:
-			if( Input.GetKeyDown(KeyCode.I) )
+			if( Input.GetKeyDown(KeyCode.V) )
 				ChangeScene("Intro");
 			break;
 		}
@@ -578,8 +587,21 @@ public class GameManager : MonoBehaviour {
 		gameOverUI.SetActive(true);
 		gameOverAnimDone = false;
 
-		redScoreText.text = playerManager.GetScore(PlayerColor.Red).ToString();
-		greenScoreText.text = playerManager.GetScore(PlayerColor.Green).ToString();
+		int rScore = playerManager.GetScore(PlayerColor.Red);
+		int gScore = playerManager.GetScore(PlayerColor.Green);
+
+		redCrown.SetActive(false);
+		greenCrown.SetActive(false);
+
+		if( rScore >= gScore )
+			redCrown.SetActive(true);
+		if( gScore >= rScore )
+			greenCrown.SetActive(true);
+
+		redScoreText.text = rScore.ToString();
+		greenScoreText.text = gScore.ToString();
+		redScoreTextShadow.text = rScore.ToString();
+		greenScoreTextShadow.text = gScore.ToString();
 		waveAchievedText.text = round.ToString();
 		continueTimeText.text = timer.ToString();
 		highScoreText.text = "99";

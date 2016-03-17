@@ -70,6 +70,9 @@ public class SpawnManager : MonoBehaviour
 
 	public bool WaveOverCheck()
 	{
+		if( spawning )
+			return false;
+		
 		bool waveOver = true;
 
 		foreach(GameObject go in m_enemyPrefabs)
