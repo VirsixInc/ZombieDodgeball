@@ -219,6 +219,9 @@ public class GameManager : MonoBehaviour {
 			break;
 		case GameMode.Main:
 			// Once timer goes down to zero
+			if( Input.GetKeyDown(KeyCode.C) )
+				ChangeScene("Config");
+
 			if( currLives <= 0 ) 
 			{
 				EndGame();
@@ -474,7 +477,9 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public void OSCMessageReceived(OSC.NET.OSCMessage message){
+	public void OSCMessageReceived(OSC.NET.OSCMessage message)
+	{
+		Debug.Log("The message I recieved was: " + message.Address);
 		if(message.Address == "/shoot"){
 //			message.Values[2] = "Red";
 			BallHit(message.Values);  
