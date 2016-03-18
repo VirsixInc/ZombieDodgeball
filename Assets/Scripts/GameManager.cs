@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour {
 			greenCircle = GameObject.Find("Moon Green").GetComponent<Image>();
 			redCircle = GameObject.Find("Moon Red").GetComponent<Image>();
 			playerManager.GetText();
-
+			round = 1;
 			gameOverUI.SetActive(false);
 
 //			redScoreBox = GameObject.Find( "InGameScoreRed" );
@@ -580,10 +580,11 @@ public class GameManager : MonoBehaviour {
 
 	}
 
-	void EndGame() {
+	void EndGame() 
+	{
 		isGamePlaying = false;
 		gameOverText.gameObject.SetActive( true );
-		StartCoroutine( "GameOverGui" );
+		//StartCoroutine( "GameOverGui" );
 		ballManager.StopAllCoroutines();
 		StopAllCoroutines();
 		timer = scoreboardTimer;
@@ -639,19 +640,19 @@ public class GameManager : MonoBehaviour {
 		return;
 	}
 	
-	IEnumerator GameOverGui() {
-		Vector3 startSize = gameOverText.localScale;
-		Vector3 endSize = startSize* 2f;
-		float timer = 0f;
-		float lerpTime = 0.5f;
-
-		while( timer < 1f ) {
-			gameOverText.transform.localScale = Vector3.Lerp( startSize, endSize, timer );
-
-			timer += Time.deltaTime / lerpTime;
-			yield return null;
-		}
-		yield return new WaitForSeconds( 3 );
-		gameOverText.gameObject.SetActive( false );
-	}
+//	IEnumerator GameOverGui() {
+//		Vector3 startSize = gameOverText.localScale;
+//		Vector3 endSize = startSize* 2f;
+//		float timer = 0f;
+//		float lerpTime = 0.5f;
+//
+//		while( timer < 1f ) {
+//			gameOverText.transform.localScale = Vector3.Lerp( startSize, endSize, timer );
+//
+//			timer += Time.deltaTime / lerpTime;
+//			yield return null;
+//		}
+//		yield return new WaitForSeconds( 3 );
+//		gameOverText.gameObject.SetActive( false );
+//	}
 }
