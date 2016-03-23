@@ -16,11 +16,12 @@ public class BaseEnemy: MonoBehaviour
 	float distToNode;
 	float timer = 0.0f;
 	bool dead = false;
+	Animator animator;
 
 
 	protected virtual void Start () 
 	{
-		deathTime = 2f;
+		deathTime = 1.5f;
 	}
 
 	protected virtual void Update () 
@@ -81,9 +82,9 @@ public class BaseEnemy: MonoBehaviour
 			PlayerManager.AddPoints(hittingBall.color, pointValue);
 
 
-//			SetKinematic( false );
+			SetKinematic( false );
 			hasBeenHit = true;
-//			m_animator.enabled = false;
+			animator.enabled = false;
 //			m_navmeshAgent.Stop();
 			dead = true;
 			moving = false;
@@ -106,6 +107,9 @@ public class BaseEnemy: MonoBehaviour
 		if( currNode == null )
 		{
 			//decrease life
+			if( GameManager.instance.isGamePlaying )
+				GameManager.instance.ReduceLives( 1 );
+			Reset();
 			moving = false;
 			return;
 		}
@@ -113,6 +117,11 @@ public class BaseEnemy: MonoBehaviour
 		distToNode = Vector3.Distance( prevNode.transform.position, currNode.transform.position );
 
 		transform.LookAt( new Vector3( currNode.transform.position.x, transform.position.y, currNode.transform.position.z ) );
+	}
+
+	protected void ResetTimer()
+	{
+		timer = 0.0f;
 	}
 
 	public void InitialSetup( MovementNode spawnNode )
@@ -123,5 +132,19 @@ public class BaseEnemy: MonoBehaviour
 		moving = true;
 		hasBeenHit = false;
 		dead = false;
+		if( animator == null )
+			animator = GetComponent<Animator> ();
+		animator.enabled = true;
+		SetKinematic (true);
+	}
+
+	protected void SetKinematic( bool value ) 
+	{
+		Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
+		
+		foreach( Rigidbody rB in rigidbodies ) 
+		{
+			rB.isKinematic = value;
+		}
 	}
 }
