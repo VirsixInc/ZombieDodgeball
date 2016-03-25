@@ -1,0 +1,318 @@
+fileFormatVersion: 2
+guid: 599f131f2b77eeb4d9585fd66b37cc45
+timeCreated: 1458927678
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Base
+    100002: Calf_L
+    100004: Calf_R
+    100006: Camera
+    100008: Clavical_L
+    100010: Clavical_R
+    100012: Fingers_L
+    100014: Fingers_R
+    100016: Foot1_L
+    100018: Foot1_R
+    100020: Foot2_L
+    100022: Foot2_R
+    100024: Forearm_L
+    100026: Forearm_R
+    100028: Hand_L
+    100030: Hand_R
+    100032: Head
+    100034: Hips
+    100036: Marker
+    100038: Neck
+    100040: Nose
+    100042: Pelvis
+    100044: Shoulder_L
+    100046: Shoulder_R
+    100048: Spine
+    100050: Stomach
+    100052: Thigh_L
+    100054: Thigh_R
+    100056: Thumb_L
+    100058: Thumb_R
+    100060: //RootNode
+    100062: Wolf_Geo
+    400000: Base
+    400002: Calf_L
+    400004: Calf_R
+    400006: Camera
+    400008: Clavical_L
+    400010: Clavical_R
+    400012: Fingers_L
+    400014: Fingers_R
+    400016: Foot1_L
+    400018: Foot1_R
+    400020: Foot2_L
+    400022: Foot2_R
+    400024: Forearm_L
+    400026: Forearm_R
+    400028: Hand_L
+    400030: Hand_R
+    400032: Head
+    400034: Hips
+    400036: Marker
+    400038: Neck
+    400040: Nose
+    400042: Pelvis
+    400044: Shoulder_L
+    400046: Shoulder_R
+    400048: Spine
+    400050: Stomach
+    400052: Thigh_L
+    400054: Thigh_R
+    400056: Thumb_L
+    400058: Thumb_R
+    400060: //RootNode
+    400062: Wolf_Geo
+    4300000: Wolf_Geo
+    7400000: Bound
+    7400002: Attack
+    9500000: //RootNode
+    13700000: Wolf_Geo
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Bound
+      takeName: e
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Base
+        weight: 1
+      - path: Base/Pelvis
+        weight: 1
+      - path: Base/Pelvis/Hips
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Calf_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Calf_L/Foot1_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Calf_L/Foot1_L/Foot2_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Calf_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Calf_R/Foot1_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Calf_R/Foot1_R/Foot2_R
+        weight: 1
+      - path: Base/Pelvis/Stomach
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L/Forearm_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L/Forearm_L/Hand_L/Thumb_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R/Forearm_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R/Forearm_R/Hand_R/Thumb_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Neck
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Neck/Head
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Neck/Head/Nose
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Marker
+        weight: 1
+      - path: Wolf_Geo
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Attack
+      takeName: e
+      firstFrame: 81
+      lastFrame: 136
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Base
+        weight: 1
+      - path: Base/Pelvis
+        weight: 1
+      - path: Base/Pelvis/Hips
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Calf_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Calf_L/Foot1_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Calf_L/Foot1_L/Foot2_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Calf_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Calf_R/Foot1_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Calf_R/Foot1_R/Foot2_R
+        weight: 1
+      - path: Base/Pelvis/Stomach
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L/Forearm_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L/Forearm_L/Hand_L/Thumb_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R/Forearm_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R/Forearm_R/Hand_R/Thumb_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Neck
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Neck/Head
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Neck/Head/Nose
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Marker
+        weight: 1
+      - path: Wolf_Geo
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
