@@ -72,6 +72,7 @@ ModelImporter:
     4300000: Wolf_Geo
     7400000: Bound
     7400002: Attack
+    7400004: Idle
     9500000: //RootNode
     13700000: Wolf_Geo
   materials:
@@ -189,6 +190,96 @@ ModelImporter:
       takeName: e
       firstFrame: 81
       lastFrame: 136
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Base
+        weight: 1
+      - path: Base/Pelvis
+        weight: 1
+      - path: Base/Pelvis/Hips
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Calf_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Calf_L/Foot1_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Calf_L/Foot1_L/Foot2_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Calf_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Calf_R/Foot1_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Calf_R/Foot1_R/Foot2_R
+        weight: 1
+      - path: Base/Pelvis/Stomach
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L/Forearm_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_L/Shoulder_L/Forearm_L/Hand_L/Thumb_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R/Forearm_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Clavical_R/Shoulder_R/Forearm_R/Hand_R/Thumb_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Neck
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Neck/Head
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Neck/Head/Nose
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Marker
+        weight: 1
+      - path: Wolf_Geo
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: e
+      firstFrame: 137
+      lastFrame: 198
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
