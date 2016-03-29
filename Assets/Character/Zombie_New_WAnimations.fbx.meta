@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: 7275ae6baaec39347ab38bed215ef2ae
+timeCreated: 1459210636
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Ankle_L
+    100002: Ankle_R
+    100004: Base
+    100006: Camera
+    100008: Chest
+    100010: Clav_L
+    100012: Clav_R
+    100014: Elbow_L
+    100016: Elbow_R
+    100018: Fingers_L
+    100020: Fingers_R
+    100022: Head
+    100024: Hips
+    100026: Knee_L
+    100028: Knee_R
+    100030: Marker
+    100032: Neck
+    100034: Pelvis
+    100036: Shoulder_L
+    100038: Shoulder_R
+    100040: Spine
+    100042: Stomach
+    100044: Thigh_L
+    100046: Thigh_R
+    100048: Thumb_L
+    100050: Thumb_R
+    100052: Toe_L
+    100054: Toe_R
+    100056: Wrist_L
+    100058: Wrist_R
+    100060: //RootNode
+    100062: Zombie_NoRig:polySurface1
+    400000: Ankle_L
+    400002: Ankle_R
+    400004: Base
+    400006: Camera
+    400008: Chest
+    400010: Clav_L
+    400012: Clav_R
+    400014: Elbow_L
+    400016: Elbow_R
+    400018: Fingers_L
+    400020: Fingers_R
+    400022: Head
+    400024: Hips
+    400026: Knee_L
+    400028: Knee_R
+    400030: Marker
+    400032: Neck
+    400034: Pelvis
+    400036: Shoulder_L
+    400038: Shoulder_R
+    400040: Spine
+    400042: Stomach
+    400044: Thigh_L
+    400046: Thigh_R
+    400048: Thumb_L
+    400050: Thumb_R
+    400052: Toe_L
+    400054: Toe_R
+    400056: Wrist_L
+    400058: Wrist_R
+    400060: //RootNode
+    400062: Zombie_NoRig:polySurface1
+    4300000: Zombie_NoRig:polySurface1
+    7400000: Walk
+    7400002: Attack
+    9500000: //RootNode
+    13700000: Zombie_NoRig:polySurface1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
