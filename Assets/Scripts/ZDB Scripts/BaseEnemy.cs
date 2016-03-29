@@ -9,14 +9,16 @@ public class BaseEnemy: MonoBehaviour
 
 	protected bool moving;
 	protected bool hasBeenHit = false;
+	protected bool attackMode = false;
 	protected float deathTime;
+	protected Animator animator;
+	protected MovementNode prevNode;
+	protected MovementNode currNode;
+	protected float attackTime = 2f;
 
-	MovementNode prevNode;
-	MovementNode currNode;
 	float distToNode;
 	float timer = 0.0f;
 	bool dead = false;
-	Animator animator;
 
 
 	protected virtual void Start () 
@@ -41,8 +43,18 @@ public class BaseEnemy: MonoBehaviour
 
 			if( lerpPercentage >= 1f )
 			{
-				MovementCheck();
 				GetNextNode();
+				MovementCheck();
+			}
+		}
+		else if( attackMode )
+		{
+			if( timer >= attackTime )
+			{
+				//slash screen
+				if( GameManager.instance.isGamePlaying )
+					GameManager.instance.ReduceLives( 1 );
+				Reset();
 			}
 		}
 		timer += Time.deltaTime;
@@ -95,7 +107,11 @@ public class BaseEnemy: MonoBehaviour
 
 	protected virtual void MovementCheck()
 	{
-		moving = true;
+		if (!attackMode) 
+		{
+			moving = true;
+			transform.LookAt (new Vector3 (currNode.transform.position.x, transform.position.y, currNode.transform.position.z));
+		}
 	}
 
 	protected void GetNextNode()
@@ -107,16 +123,18 @@ public class BaseEnemy: MonoBehaviour
 		if( currNode == null )
 		{
 			//decrease life
-			if( GameManager.instance.isGamePlaying )
-				GameManager.instance.ReduceLives( 1 );
-			Reset();
+			
+			animator.Play("Attack");
+//			if( GameManager.instance.isGamePlaying )
+//				GameManager.instance.ReduceLives( 1 );
+			attackMode = true;
+			//Reset();//remove this
 			moving = false;
 			return;
 		}
 
 		distToNode = Vector3.Distance( prevNode.transform.position, currNode.transform.position );
 
-		transform.LookAt( new Vector3( currNode.transform.position.x, transform.position.y, currNode.transform.position.z ) );
 	}
 
 	protected void ResetTimer()
@@ -130,12 +148,14 @@ public class BaseEnemy: MonoBehaviour
 		transform.position = currNode.transform.position;
 		GetNextNode();
 		moving = true;
+		attackMode = false;
 		hasBeenHit = false;
 		dead = false;
 		if( animator == null )
 			animator = GetComponent<Animator> ();
 		animator.enabled = true;
 		SetKinematic (true);
+		MovementCheck ();
 	}
 
 	protected void SetKinematic( bool value ) 

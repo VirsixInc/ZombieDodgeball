@@ -6,6 +6,8 @@ public class Werewolf : BaseEnemy
 	float waitTime = 2f;
 	float waitTimer;
 
+	bool beganBound;
+
 	protected override void Start()
 	{
 		base.Start ();
@@ -17,9 +19,16 @@ public class Werewolf : BaseEnemy
 	{
 		base.Update ();
 
-		if( !moving )
+		if( !moving && !attackMode )
 		{
 			waitTimer -= Time.deltaTime;
+
+			if( waitTimer <= 0.4f && !beganBound )
+			{
+				beganBound = true;
+				animator.Play("Bound");
+				transform.LookAt( new Vector3( currNode.transform.position.x, transform.position.y, currNode.transform.position.z ) );
+			}
 
 			if( waitTimer <= 0f )
 			{
@@ -33,5 +42,6 @@ public class Werewolf : BaseEnemy
 	{
 		moving = false;
 		waitTimer = waitTime;
+		beganBound = false;
 	}
 }

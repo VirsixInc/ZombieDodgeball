@@ -80,6 +80,9 @@ public class SpawnManager : MonoBehaviour
 			waveOver = StaticPool.AllEnemiesDeadCheck( go ) && waveOver;
 		}
 
+		if( waveOver )
+			Debug.Log("Wave is over in SM");
+
 		return waveOver;
 	}
 
@@ -88,6 +91,7 @@ public class SpawnManager : MonoBehaviour
 		if( bzLeft + fzLeft + wwLeft <= 0 )
 		{
 			spawning = false;
+			Debug.Log("SM is done spwaning");
 			//GameManager.instance.RoundOver();
 		}
 	}

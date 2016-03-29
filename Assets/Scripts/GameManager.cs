@@ -237,6 +237,7 @@ public class GameManager : MonoBehaviour {
 			}
 			else if( spawnManager.WaveOverCheck() )
 			{
+				Debug.Log("Wave is over in GM");
 				RoundOver();
 			}
 
@@ -427,12 +428,14 @@ public class GameManager : MonoBehaviour {
 			EndGame();
 			return;
 		}
+		Debug.Log("GM round over");
 		timer = 3f;
 		inBetweenRounds = true;
 	}
 
 	void StartNextRound()
 	{
+		Debug.Log("GM staring new round");
 		waveText.text = round.ToString();
 		inBetweenRounds = false;
 		spawnManager.NewSpawnRound( round );
