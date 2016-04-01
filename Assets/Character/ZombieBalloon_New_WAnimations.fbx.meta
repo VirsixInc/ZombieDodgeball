@@ -102,6 +102,8 @@ ModelImporter:
     4300008: Bomb_1
     7400000: Move
     7400002: Death
+    7400004: Attack Long
+    7400006: Attack Short
     9500000: //RootNode
     13700000: Balloon3
     13700002: Bomb_1
