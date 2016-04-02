@@ -94,7 +94,187 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Move
+      takeName: Move
+      firstFrame: 0
+      lastFrame: 71
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Base
+        weight: 1
+      - path: Base/Pelvis
+        weight: 1
+      - path: Base/Pelvis/Hips
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Knee_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Knee_L/Ankle_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Knee_L/Ankle_L/Toe_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Knee_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Knee_R/Ankle_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Knee_R/Ankle_R/Toe_R
+        weight: 1
+      - path: Base/Pelvis/Stomach
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_L/Shoulder_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_L/Shoulder_L/Elbow_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_L/Shoulder_L/Elbow_L/Wrist_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_L/Shoulder_L/Elbow_L/Wrist_L/Fingers_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_L/Shoulder_L/Elbow_L/Wrist_L/Thumb_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_R/Shoulder_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_R/Shoulder_R/Elbow_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_R/Shoulder_R/Elbow_R/Wrist_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_R/Shoulder_R/Elbow_R/Wrist_R/Fingers_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_R/Shoulder_R/Elbow_R/Wrist_R/Thumb_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Neck
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Marker
+        weight: 1
+      - path: Zombie_NoRig:polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Attack
+      takeName: Attack
+      firstFrame: 0
+      lastFrame: 122
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Base
+        weight: 1
+      - path: Base/Pelvis
+        weight: 1
+      - path: Base/Pelvis/Hips
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Knee_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Knee_L/Ankle_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_L/Knee_L/Ankle_L/Toe_L
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Knee_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Knee_R/Ankle_R
+        weight: 1
+      - path: Base/Pelvis/Hips/Thigh_R/Knee_R/Ankle_R/Toe_R
+        weight: 1
+      - path: Base/Pelvis/Stomach
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_L/Shoulder_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_L/Shoulder_L/Elbow_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_L/Shoulder_L/Elbow_L/Wrist_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_L/Shoulder_L/Elbow_L/Wrist_L/Fingers_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_L/Shoulder_L/Elbow_L/Wrist_L/Thumb_L
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_R/Shoulder_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_R/Shoulder_R/Elbow_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_R/Shoulder_R/Elbow_R/Wrist_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_R/Shoulder_R/Elbow_R/Wrist_R/Fingers_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Clav_R/Shoulder_R/Elbow_R/Wrist_R/Thumb_R
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Neck
+        weight: 1
+      - path: Base/Pelvis/Stomach/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Marker
+        weight: 1
+      - path: Zombie_NoRig:polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
