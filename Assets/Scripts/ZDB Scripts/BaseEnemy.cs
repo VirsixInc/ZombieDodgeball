@@ -15,6 +15,7 @@ public class BaseEnemy: MonoBehaviour
 	protected MovementNode prevNode;
 	protected MovementNode currNode;
 	protected float attackTime = 2f;
+	protected bool hasDeathAnim = false;
 
 	float distToNode;
 	float timer = 0.0f;
@@ -67,7 +68,7 @@ public class BaseEnemy: MonoBehaviour
 		gameObject.SetActive(false);
 	}
 
-	protected  void Hit( GameObject hittingObj ) 
+	protected virtual void Hit( GameObject hittingObj ) 
 	{
 		if( !hasBeenHit ) 
 		{
@@ -96,12 +97,13 @@ public class BaseEnemy: MonoBehaviour
 
 			SetKinematic( false );
 			hasBeenHit = true;
-			animator.enabled = false;
+			if( !hasDeathAnim )
+				animator.enabled = false;
 //			m_navmeshAgent.Stop();
 			dead = true;
 			moving = false;
 			timer = 0.0f;
-			GetComponent<Animator>().SetBool( "Dead", true );
+			//GetComponent<Animator>().SetBool( "Dead", true );
 		}
 	}
 
@@ -158,7 +160,7 @@ public class BaseEnemy: MonoBehaviour
 		MovementCheck ();
 	}
 
-	protected void SetKinematic( bool value ) 
+	protected virtual void SetKinematic( bool value ) 
 	{
 		Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
 		
