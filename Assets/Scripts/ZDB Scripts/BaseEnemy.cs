@@ -54,7 +54,7 @@ public class BaseEnemy: MonoBehaviour
 			{
 				//slash screen
 				if( GameManager.instance.isGamePlaying )
-					GameManager.instance.ReduceLives( 1 );
+					GameManager.instance.ReduceLives( 1, this );
 				Reset();
 			}
 		}

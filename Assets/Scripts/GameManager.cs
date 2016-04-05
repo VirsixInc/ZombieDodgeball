@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour {
 	BallManager ballManager;
 	PlayerManager playerManager;
 	SpawnManager spawnManager;
+	ScreenEffectManager screenEffects;
 
 //	IntroGUI introGUI;
 
@@ -121,6 +122,7 @@ public class GameManager : MonoBehaviour {
 			gameOverText = GameObject.Find( "GameOverGui" ).transform;
 			gameOverText.gameObject.SetActive( true );
 			spawnManager = GameObject.FindObjectOfType<SpawnManager>();
+			screenEffects = spawnManager.gameObject.GetComponent<ScreenEffectManager>();
 
 			// Get Hp Gui in scene
 			HpCounters = GameObject.Find( "HpGui" ).GetComponent<HpIconHolder>().m_hpIcons;
@@ -576,10 +578,26 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public void ReduceLives( int amount ) {
+	public void ReduceLives( int amount, BaseEnemy enemy ) {
 		currLives -= amount;
-
 		HpCounters[currLives].color = missingHpIconColor;
+		
+		
+		screenEffects.damageScreen();
+		
+		if( enemy.GetComponent<BasicZombie>() )
+		{
+			screenEffects.ZombieHitEffect();
+		}
+		else if( enemy.GetComponent<FlyingZombie>() )
+		{
+			screenEffects.FlyingZombieHitEffect();
+		}
+		else if( enemy.GetComponent<Werewolf>() )
+		{
+			Debug.Log("Werewolf hit");
+			screenEffects.WerewolfHitEffect();
+		}
 
 	}
 
