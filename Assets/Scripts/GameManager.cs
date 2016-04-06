@@ -578,12 +578,13 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public void ReduceLives( int amount, BaseEnemy enemy ) {
+	public void ReduceLives( int amount, BaseEnemy enemy ) 
+	{
 		currLives -= amount;
 		HpCounters[currLives].color = missingHpIconColor;
 		
 		
-		screenEffects.damageScreen();
+		screenEffects.damageScreen(enemy);
 		
 		if( enemy.GetComponent<BasicZombie>() )
 		{

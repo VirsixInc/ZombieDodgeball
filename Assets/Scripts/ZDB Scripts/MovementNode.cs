@@ -7,6 +7,10 @@ public class MovementNode : MonoBehaviour
 	public List<MovementNode> nextNodes = new List<MovementNode>();
 
 	public bool flyingNode;
+	
+	public int slotNumber;
+	
+	public bool endNode;
 
 	void Start () 
 	{
