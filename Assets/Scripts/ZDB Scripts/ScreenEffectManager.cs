@@ -9,6 +9,12 @@ public class ScreenEffectManager : MonoBehaviour
 	public List<ScreenEffect> flyingZombieDamageEffects = new List<ScreenEffect>();
 	public List<ScreenEffect> werewolfDamageEffects = new List<ScreenEffect>();
 	
+	public Transform leftPos;
+	public Transform centerPos;
+	public Transform rightPos;
+	
+	Vector3 imagePos;
+	
 	void Start()
 	{
 		ResetAllEffects();
@@ -19,11 +25,27 @@ public class ScreenEffectManager : MonoBehaviour
 	}
 	
 	
-	public void damageScreen()
+	public void damageScreen( BaseEnemy enemy )
 	{
 		foreach( ScreenEffect se in screenDamageEffects )
 		{
 			se.Activate();
+		}
+		
+		switch( enemy.GetNodeLaneNumber() )
+		{
+		case 1:
+			imagePos = leftPos.position;
+			break;
+		case 2:
+			imagePos = centerPos.position;
+			break;
+		case 3:
+			imagePos = rightPos.position;
+			break;
+		default:
+			imagePos = centerPos.position;
+			break;
 		}
 	}
 	
@@ -32,6 +54,8 @@ public class ScreenEffectManager : MonoBehaviour
 		foreach( ScreenEffect se in zombieDamageEffects )
 		{
 			se.Activate();
+			imagePos.y = se.transform.position.y;
+			se.transform.position = imagePos;
 		}
 	}
 	
@@ -40,6 +64,8 @@ public class ScreenEffectManager : MonoBehaviour
 		foreach( ScreenEffect se in flyingZombieDamageEffects )
 		{
 			se.Activate();
+			imagePos.y = se.transform.position.y;
+			se.transform.position = imagePos;
 		}
 	}
 	
@@ -50,6 +76,8 @@ public class ScreenEffectManager : MonoBehaviour
 		{
 			Debug.Log("werewolf effect found");
 			se.Activate();
+			imagePos.y = se.transform.position.y;
+			se.transform.position = imagePos;
 		}
 	}
 	

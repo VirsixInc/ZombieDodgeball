@@ -125,7 +125,7 @@ public class BaseEnemy: MonoBehaviour
 		if( currNode == null )
 		{
 			//decrease life
-			
+			currNode = prevNode;
 			animator.Play("Attack");
 //			if( GameManager.instance.isGamePlaying )
 //				GameManager.instance.ReduceLives( 1 );
@@ -168,5 +168,10 @@ public class BaseEnemy: MonoBehaviour
 		{
 			rB.isKinematic = value;
 		}
+	}
+	
+	public int GetNodeLaneNumber()
+	{
+		return currNode.slotNumber;
 	}
 }
