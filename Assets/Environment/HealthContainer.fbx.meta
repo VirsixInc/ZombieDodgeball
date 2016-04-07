@@ -8,15 +8,20 @@ ModelImporter:
     100000: //RootNode
     100002: HealthContainer_Inner
     100004: HealthContainer_Outer
+    100006: HealthContainer_Cork
     400000: //RootNode
     400002: HealthContainer_Inner
     400004: HealthContainer_Outer
+    400006: HealthContainer_Cork
     2300000: HealthContainer_Inner
     2300002: HealthContainer_Outer
+    2300004: HealthContainer_Cork
     3300000: HealthContainer_Inner
     3300002: HealthContainer_Outer
+    3300004: HealthContainer_Cork
     4300000: HealthContainer_Inner
     4300002: HealthContainer_Outer
+    4300004: HealthContainer_Cork
   materials:
     importMaterials: 1
     materialName: 0

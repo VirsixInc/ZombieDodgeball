@@ -1,0 +1,116 @@
+fileFormatVersion: 2
+guid: bd96c183c1695634aab3914d725ba149
+timeCreated: 1459989428
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: HealthContainer_Main
+    100004: HealthContainer_Piece_1
+    100006: HealthContainer_Piece_2
+    100008: HealthContainer_Piece_3
+    100010: HealthContainer_Piece_4
+    100012: HealthContainer_Piece_5
+    100014: HealthContainer_Piece_6
+    100016: HealthContainer_Piece_7
+    100018: HealthContainer_Cork
+    400000: //RootNode
+    400002: HealthContainer_Main
+    400004: HealthContainer_Piece_1
+    400006: HealthContainer_Piece_2
+    400008: HealthContainer_Piece_3
+    400010: HealthContainer_Piece_4
+    400012: HealthContainer_Piece_5
+    400014: HealthContainer_Piece_6
+    400016: HealthContainer_Piece_7
+    400018: HealthContainer_Cork
+    2300000: HealthContainer_Main
+    2300002: HealthContainer_Piece_1
+    2300004: HealthContainer_Piece_2
+    2300006: HealthContainer_Piece_3
+    2300008: HealthContainer_Piece_4
+    2300010: HealthContainer_Piece_5
+    2300012: HealthContainer_Piece_6
+    2300014: HealthContainer_Piece_7
+    2300016: HealthContainer_Cork
+    3300000: HealthContainer_Main
+    3300002: HealthContainer_Piece_1
+    3300004: HealthContainer_Piece_2
+    3300006: HealthContainer_Piece_3
+    3300008: HealthContainer_Piece_4
+    3300010: HealthContainer_Piece_5
+    3300012: HealthContainer_Piece_6
+    3300014: HealthContainer_Piece_7
+    3300016: HealthContainer_Cork
+    4300000: HealthContainer_Main
+    4300002: HealthContainer_Piece_1
+    4300004: HealthContainer_Piece_2
+    4300006: HealthContainer_Piece_3
+    4300008: HealthContainer_Piece_4
+    4300010: HealthContainer_Piece_5
+    4300012: HealthContainer_Piece_6
+    4300014: HealthContainer_Piece_7
+    4300016: HealthContainer_Cork
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
