@@ -5,6 +5,7 @@ public class FlyingZombie : BaseEnemy
 {
 	public Transform bombTransform;
 	public GameObject explosionParticlesPrefab;
+	public GameObject bombPrefab;
 
 	protected override void Start()
 	{
@@ -16,6 +17,7 @@ public class FlyingZombie : BaseEnemy
 	{
 		base.Hit( hittingObj );
 		animator.Play("Death");
+		BombEvent be = ((GameObject)Instantiate( bombPrefab, bombTransform.position, bombTransform.rotation )).GetComponent<BombEvent>();
 	}
 	
 	protected override void SetKinematic( bool value ) 
