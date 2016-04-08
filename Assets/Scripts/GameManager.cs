@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
@@ -41,6 +42,8 @@ public class GameManager : MonoBehaviour {
 
 	public UnityEngine.UI.Image[] HpCounters;
 	public Color missingHpIconColor;
+	
+	public List<HealthContainer> healthContainers;
 
 	bool gameOverAnimDone = false;
 	Text waveText;
@@ -141,6 +144,12 @@ public class GameManager : MonoBehaviour {
 			continueTimeText = GameObject.Find("ContinueTime").GetComponent<Text>();
 			greenCircle = GameObject.Find("Moon Green").GetComponent<Image>();
 			redCircle = GameObject.Find("Moon Red").GetComponent<Image>();
+			
+			for( int i = 1; i < 6; ++i )
+			{
+				healthContainers.Add( GameObject.Find( "HealthContainer_" + i ).GetComponent<HealthContainer>() );
+			}
+			
 			playerManager.GetText();
 			round = 1;
 			gameOverUI.SetActive(false);
@@ -223,6 +232,9 @@ public class GameManager : MonoBehaviour {
 			// Once timer goes down to zero
 			if( Input.GetKeyDown(KeyCode.C) )
 				ChangeScene("Config");
+				
+			if( Input.GetKeyDown(KeyCode.BackQuote) )
+				ShatterHealthContainer();//temp for debugging health containers
 
 			if( currLives <= 0 ) 
 			{
@@ -583,6 +595,7 @@ public class GameManager : MonoBehaviour {
 		currLives -= amount;
 		HpCounters[currLives].color = missingHpIconColor;
 		
+		ShatterHealthContainer();
 		
 		screenEffects.damageScreen(enemy);
 		
@@ -600,6 +613,18 @@ public class GameManager : MonoBehaviour {
 			screenEffects.WerewolfHitEffect();
 		}
 
+	}
+	
+	void ShatterHealthContainer()
+	{
+		foreach( HealthContainer hc in healthContainers )
+		{
+			if( !hc.IsShattered() )
+			{
+				hc.Shatter();
+				return;
+			}
+		}
 	}
 
 	void EndGame() 

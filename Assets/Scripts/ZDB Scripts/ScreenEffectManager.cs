@@ -13,7 +13,12 @@ public class ScreenEffectManager : MonoBehaviour
 	public Transform centerPos;
 	public Transform rightPos;
 	
+	public Transform worldLeftPos;
+	public Transform worldCenterPos;
+	public Transform worldRightPos;
+	
 	Vector3 imagePos;
+	Vector3 worldImagePos;
 	
 	void Start()
 	{
@@ -36,15 +41,19 @@ public class ScreenEffectManager : MonoBehaviour
 		{
 		case 1:
 			imagePos = leftPos.position;
+			worldImagePos = worldLeftPos.position;
 			break;
 		case 2:
 			imagePos = centerPos.position;
+			worldImagePos = worldCenterPos.position;
 			break;
 		case 3:
 			imagePos = rightPos.position;
+			worldImagePos = worldRightPos.position;
 			break;
 		default:
 			imagePos = centerPos.position;
+			worldImagePos = worldCenterPos.position;
 			break;
 		}
 	}
@@ -54,8 +63,8 @@ public class ScreenEffectManager : MonoBehaviour
 		foreach( ScreenEffect se in zombieDamageEffects )
 		{
 			se.Activate();
-			imagePos.y = se.transform.position.y;
-			se.transform.position = imagePos;
+			worldImagePos.y = se.transform.position.y;
+			se.transform.position = worldImagePos;
 		}
 	}
 	
