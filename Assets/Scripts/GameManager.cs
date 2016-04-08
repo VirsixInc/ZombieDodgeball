@@ -131,9 +131,8 @@ public class GameManager : MonoBehaviour {
 			HpCounters = GameObject.Find( "HpGui" ).GetComponent<HpIconHolder>().m_hpIcons;
 
 
-			gameOverUI = GameObject.Find("GameOver_Canvas");
 			waveText = GameObject.Find("Wave Text").GetComponent<Text>();
-			redScoreText = GameObject.Find("Red Score").GetComponent<Text>();
+			redScoreText = GameObject.Find("Red_Score").GetComponent<Text>();
 			greenScoreText = GameObject.Find("Green Score").GetComponent<Text>();
 			redScoreTextShadow = GameObject.Find("Red Score Shadow").GetComponent<Text>();
 			greenScoreTextShadow = GameObject.Find("Green Score Shadow").GetComponent<Text>();
@@ -152,6 +151,7 @@ public class GameManager : MonoBehaviour {
 			
 			playerManager.GetText();
 			round = 1;
+			gameOverUI = GameObject.Find("GameOver_Canvas");
 			gameOverUI.SetActive(false);
 
 //			redScoreBox = GameObject.Find( "InGameScoreRed" );
