@@ -18,4 +18,9 @@ public class FlyingZombie : BaseEnemy
 	protected override void SetKinematic( bool value ) 
 	{
 	}
+	
+	protected override void Attack()
+	{
+		attackMode = true;
+	}
 }

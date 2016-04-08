@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-class AnimateTiledTexture : MonoBehaviour
+public class AnimateTiledTexture : MonoBehaviour
 {
 	public int columns = 10;
 	public int rows = 1;
@@ -10,6 +10,7 @@ class AnimateTiledTexture : MonoBehaviour
 	//the current frame to display
 	private int index = 0;
 	float timer = 0.0f;
+	bool active = true;
 
 	void Start()
 	{
@@ -19,6 +20,9 @@ class AnimateTiledTexture : MonoBehaviour
 
 	void Update()
 	{
+		if( !active )
+			return;
+			
 		timer += Time.deltaTime;
 
 		if( timer >= 1f / framesPerSecond )
@@ -34,5 +38,15 @@ class AnimateTiledTexture : MonoBehaviour
 
 			GetComponent<Renderer>().sharedMaterial.SetTextureOffset("_MainTex", offset);
 		}
+	}
+	
+	public void Activate()
+	{
+		active = true;
+	}
+	
+	public void Deactivate()
+	{
+		active = false;
 	}
 }

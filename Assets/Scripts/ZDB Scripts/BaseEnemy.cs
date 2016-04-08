@@ -116,7 +116,7 @@ public class BaseEnemy: MonoBehaviour
 		}
 	}
 
-	protected void GetNextNode()
+	protected virtual void GetNextNode()
 	{
 		timer = 0.0f;
 		prevNode = currNode;
@@ -124,19 +124,20 @@ public class BaseEnemy: MonoBehaviour
 
 		if( currNode == null )
 		{
-			//decrease life
 			currNode = prevNode;
-			animator.Play("Attack");
-//			if( GameManager.instance.isGamePlaying )
-//				GameManager.instance.ReduceLives( 1 );
-			attackMode = true;
-			//Reset();//remove this
+			Attack ();
 			moving = false;
 			return;
 		}
 
 		distToNode = Vector3.Distance( prevNode.transform.position, currNode.transform.position );
 
+	}
+	
+	protected virtual void Attack()
+	{
+		animator.Play("Attack");
+		attackMode = true;
 	}
 
 	protected void ResetTimer()
