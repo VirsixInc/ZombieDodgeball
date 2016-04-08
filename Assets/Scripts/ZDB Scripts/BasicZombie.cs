@@ -17,9 +17,9 @@ public class BasicZombie : BaseEnemy
 		biteAnim.Deactivate();
 	}
 	
-	protected override void Attack()
+	protected override void ActivateAttackMode()
 	{
-		base.Attack();
+		base.ActivateAttackMode();
 		biteAnim.Activate();
 	}
 }

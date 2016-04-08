@@ -53,9 +53,7 @@ public class BaseEnemy: MonoBehaviour
 			if( timer >= attackTime )
 			{
 				//slash screen
-				if( GameManager.instance.isGamePlaying )
-					GameManager.instance.ReduceLives( 1, this );
-				Reset();
+				Attack();
 			}
 		}
 		timer += Time.deltaTime;
@@ -125,7 +123,7 @@ public class BaseEnemy: MonoBehaviour
 		if( currNode == null )
 		{
 			currNode = prevNode;
-			Attack ();
+			ActivateAttackMode ();
 			moving = false;
 			return;
 		}
@@ -134,10 +132,17 @@ public class BaseEnemy: MonoBehaviour
 
 	}
 	
-	protected virtual void Attack()
+	protected virtual void ActivateAttackMode()
 	{
 		animator.Play("Attack");
 		attackMode = true;
+	}
+	
+	protected virtual void Attack()
+	{
+		if( GameManager.instance.isGamePlaying )
+			GameManager.instance.ReduceLives( 1, this );
+		Reset();
 	}
 
 	protected void ResetTimer()

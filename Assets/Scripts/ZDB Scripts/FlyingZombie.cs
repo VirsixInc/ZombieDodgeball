@@ -3,6 +3,9 @@ using System.Collections;
 
 public class FlyingZombie : BaseEnemy 
 {
+	public Transform bombTransform;
+	public GameObject explosionParticlesPrefab;
+
 	protected override void Start()
 	{
 		base.Start();
@@ -19,8 +22,14 @@ public class FlyingZombie : BaseEnemy
 	{
 	}
 	
-	protected override void Attack()
+	protected override void ActivateAttackMode()
 	{
 		attackMode = true;
+	}
+	
+	protected override void Attack()
+	{
+		base.Attack();
+		Instantiate( explosionParticlesPrefab, bombTransform.position, Quaternion.identity );
 	}
 }
