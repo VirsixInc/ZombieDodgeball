@@ -683,7 +683,10 @@ public class GameManager : MonoBehaviour {
 			enemy.StopAllCoroutines();
 			enemy.gameObject.SetActive( false );
 		}
-		
+
+
+		healthContainers.RemoveRange (0, healthContainers.Count);
+
 		return;
 	}
 	
