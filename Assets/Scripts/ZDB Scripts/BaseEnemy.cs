@@ -68,41 +68,41 @@ public class BaseEnemy: MonoBehaviour
 
 	protected virtual void Hit( GameObject hittingObj ) 
 	{
-		if( !hasBeenHit ) 
+		if( hasBeenHit )
+			return;
+			
+		Ball hittingBall = hittingObj.GetComponent<Ball>();
+
+
+		if( hittingBall.color == PlayerColor.Red ) 
 		{
-			Ball hittingBall = hittingObj.GetComponent<Ball>();
-
-
-			if( hittingBall.color == PlayerColor.Red ) 
-			{
-				FloatingTextManager.instance.CreateFloatingText( transform.position, pointValue, Color.red );
-			}
-			else if( hittingBall.color == PlayerColor.Green)
-			{
-				FloatingTextManager.instance.CreateFloatingText( transform.position, pointValue, Color.green );
-			}
-			else if( hittingBall.color == PlayerColor.Yellow) 
-			{
-				FloatingTextManager.instance.CreateFloatingText( transform.position, pointValue, Color.yellow );
-			}
-			else if( hittingBall.color == PlayerColor.Blue) 
-			{
-				FloatingTextManager.instance.CreateFloatingText( transform.position, pointValue, Color.blue );
-			}
-
-			PlayerManager.AddPoints(hittingBall.color, pointValue);
-
-
-			SetKinematic( false );
-			hasBeenHit = true;
-			if( !hasDeathAnim )
-				animator.enabled = false;
-//			m_navmeshAgent.Stop();
-			dead = true;
-			moving = false;
-			timer = 0.0f;
-			//GetComponent<Animator>().SetBool( "Dead", true );
+			FloatingTextManager.instance.CreateFloatingText( transform.position, pointValue, Color.red );
 		}
+		else if( hittingBall.color == PlayerColor.Green)
+		{
+			FloatingTextManager.instance.CreateFloatingText( transform.position, pointValue, Color.green );
+		}
+//			else if( hittingBall.color == PlayerColor.Yellow) 
+//			{
+//				FloatingTextManager.instance.CreateFloatingText( transform.position, pointValue, Color.yellow );
+//			}
+//			else if( hittingBall.color == PlayerColor.Blue) 
+//			{
+//				FloatingTextManager.instance.CreateFloatingText( transform.position, pointValue, Color.blue );
+//			}
+
+		PlayerManager.AddPoints(hittingBall.color, pointValue);
+
+
+		SetKinematic( false );
+		hasBeenHit = true;
+		if( !hasDeathAnim )
+			animator.enabled = false;
+//			m_navmeshAgent.Stop();
+		dead = true;
+		moving = false;
+		timer = 0.0f;
+		//GetComponent<Animator>().SetBool( "Dead", true );
 	}
 
 	protected virtual void MovementCheck()

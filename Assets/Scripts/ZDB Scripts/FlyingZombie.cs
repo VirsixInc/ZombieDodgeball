@@ -15,9 +15,13 @@ public class FlyingZombie : BaseEnemy
 
 	protected override void Hit( GameObject hittingObj ) 
 	{
+		if( hasBeenHit )
+			return;
+			
 		base.Hit( hittingObj );
 		animator.Play("Death");
 		BombEvent be = ((GameObject)Instantiate( bombPrefab, bombTransform.position, bombTransform.rotation )).GetComponent<BombEvent>();
+		be.StartEvent( hittingObj.GetComponent<Ball>() );
 	}
 	
 	protected override void SetKinematic( bool value ) 

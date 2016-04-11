@@ -29,6 +29,8 @@ public class BombEvent : EventSystem
 	public override void StartEvent( Ball eBall )
 	{
 		base.StartEvent( eBall );
+		if( coll == null )
+			coll = gameObject.GetComponent<Collider>();
 		coll.enabled = false;
 		delayTimer = collisionDelay;
 	}
@@ -38,6 +40,19 @@ public class BombEvent : EventSystem
 		if( col.transform.tag == "Untagged" )
 		{
 			Instantiate( explosionParticlesPrefab, transform.position, Quaternion.identity );
+			
+			Collider[] enemiesHit = Physics.OverlapSphere( transform.position, 5f );
+			
+			foreach( Collider enemyCol in enemiesHit )
+			{
+				Debug.Log ("Hit something");
+				if( enemyCol.tag == "Enemy" )
+				{
+					Debug.Log("It was an enemy!");
+					enemyCol.transform.SendMessageUpwards("Hit", eventBall.gameObject, SendMessageOptions.DontRequireReceiver);
+				}
+			}
+			
 			GameObject.Destroy(this.gameObject);
 		}
 	}
