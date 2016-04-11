@@ -9,6 +9,7 @@ public class BasicZombie : BaseEnemy
 	{
 		base.Start ();
 		biteAnim.Deactivate();
+		attackTime = 2f;
 	}
 	
 	protected override void Reset()

@@ -6,11 +6,14 @@ public class FlyingZombie : BaseEnemy
 	public Transform bombTransform;
 	public GameObject explosionParticlesPrefab;
 	public GameObject bombPrefab;
+	
+	public BombPulse bombPulse;
 
 	protected override void Start()
 	{
 		base.Start();
 		hasDeathAnim = true;
+		attackTime = 2f;
 	}
 
 	protected override void Hit( GameObject hittingObj ) 
@@ -31,7 +34,7 @@ public class FlyingZombie : BaseEnemy
 	public override void InitialSetup( MovementNode spawnNode )
 	{
 		base.InitialSetup(spawnNode);
-		
+		bombPulse.Pulse( false );
 		Collider[] colls = gameObject.GetComponentsInChildren<Collider>();
 		foreach( Collider coll in colls )
 			coll.enabled = true;
@@ -48,7 +51,8 @@ public class FlyingZombie : BaseEnemy
 	
 	protected override void ActivateAttackMode()
 	{
-		attackMode = true;
+		base.ActivateAttackMode();
+		bombPulse.Pulse( true );
 	}
 	
 	protected override void Attack()

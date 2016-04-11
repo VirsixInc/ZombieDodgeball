@@ -12,7 +12,7 @@ public class Werewolf : BaseEnemy
 	{
 		base.Start ();
 		speed = 10f;
-		attackTime = 1.25f;
+		attackTime = 1f;
 		//deathTime = 0f;
 	}
 
