@@ -176,6 +176,28 @@ public class BaseEnemy: MonoBehaviour
 		}
 	}
 	
+	protected virtual void HitByExplosion( GameObject hittingObj )
+	{
+		Hit( hittingObj );
+	}
+	
+	protected virtual void DelayExplosiveForce( object[] parms )
+	{
+		StartCoroutine( "DelayedExplosiveForce", parms );
+	}
+	
+	public IEnumerator DelayedExplosiveForce( object[] parms )
+	{
+		yield return new WaitForSeconds( (float)parms[0] );
+	
+		Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
+		
+		foreach( Rigidbody rB in rigidbodies ) 
+		{
+			rB.AddExplosionForce( (float)parms[1], (Vector3)parms[2], (float)parms[3] );
+		}
+	}
+	
 	public int GetNodeLaneNumber()
 	{
 		return currNode.slotNumber;
