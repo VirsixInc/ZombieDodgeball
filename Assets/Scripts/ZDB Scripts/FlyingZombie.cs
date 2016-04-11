@@ -28,6 +28,15 @@ public class FlyingZombie : BaseEnemy
 		be.StartEvent( hittingObj.GetComponent<Ball>() );
 	}
 	
+	public override void InitialSetup( MovementNode spawnNode )
+	{
+		base.InitialSetup(spawnNode);
+		
+		Collider[] colls = gameObject.GetComponentsInChildren<Collider>();
+		foreach( Collider coll in colls )
+			coll.enabled = true;
+	}
+	
 	protected override void HitByExplosion( GameObject hittingObj )
 	{
 		//nothing

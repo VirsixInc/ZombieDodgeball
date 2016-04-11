@@ -150,7 +150,7 @@ public class BaseEnemy: MonoBehaviour
 		timer = 0.0f;
 	}
 
-	public void InitialSetup( MovementNode spawnNode )
+	public virtual void InitialSetup( MovementNode spawnNode )
 	{
 		currNode = spawnNode;
 		transform.position = currNode.transform.position;

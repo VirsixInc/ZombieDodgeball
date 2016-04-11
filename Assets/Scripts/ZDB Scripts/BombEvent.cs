@@ -38,7 +38,7 @@ public class BombEvent : EventSystem
 			{
 				if( enemyCol.tag == "Enemy" )
 				{
-					enemyCol.transform.SendMessageUpwards("Hit", eventBall.gameObject, SendMessageOptions.DontRequireReceiver);
+					enemyCol.transform.SendMessageUpwards("HitByExplosion", eventBall.gameObject, SendMessageOptions.DontRequireReceiver);
 					
 					
 					object[] parms = new object[4]{0.1f, 500f, transform.position, explosionRadius};
