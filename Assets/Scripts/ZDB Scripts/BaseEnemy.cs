@@ -16,6 +16,7 @@ public class BaseEnemy: MonoBehaviour
 	protected MovementNode currNode;
 	protected float attackTime = 2f;
 	protected bool hasDeathAnim = false;
+	protected bool moveSpeedByDistance = true;
 
 	float distToNode;
 	float timer = 0.0f;
@@ -38,8 +39,11 @@ public class BaseEnemy: MonoBehaviour
 		}
 		else if( moving )
 		{
-			float lerpPercentage = timer * speed / ( distToNode );
-
+			float lerpPercentage = timer * speed;// / ( distToNode );
+			
+			if( moveSpeedByDistance )
+				lerpPercentage /= distToNode;
+			
 			transform.transform.position = Vector3.Lerp( prevNode.transform.position, currNode.transform.position, lerpPercentage );
 
 			if( lerpPercentage >= 1f )

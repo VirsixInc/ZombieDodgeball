@@ -8,6 +8,7 @@ public class FlyingZombie : BaseEnemy
 	public GameObject bombPrefab;
 	
 	public BombPulse bombPulse;
+	public ParticleSystem smokeParticles;
 
 	protected override void Start()
 	{
@@ -23,6 +24,7 @@ public class FlyingZombie : BaseEnemy
 			
 		base.Hit( hittingObj );
 		animator.Play("Death");
+		smokeParticles.Stop();
 		Collider[] colls = gameObject.GetComponentsInChildren<Collider>();
 		foreach( Collider coll in colls )
 			coll.enabled = false;
@@ -35,6 +37,7 @@ public class FlyingZombie : BaseEnemy
 	{
 		base.InitialSetup(spawnNode);
 		bombPulse.Pulse( false );
+		smokeParticles.Play();
 		Collider[] colls = gameObject.GetComponentsInChildren<Collider>();
 		foreach( Collider coll in colls )
 			coll.enabled = true;

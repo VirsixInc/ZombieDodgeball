@@ -62,9 +62,12 @@ public class ScreenEffectManager : MonoBehaviour
 	{
 		foreach( ScreenEffect se in zombieDamageEffects )
 		{
+//			se.Activate();
+//			worldImagePos.y = se.transform.position.y;
+//			se.transform.position = worldImagePos;
 			se.Activate();
-			worldImagePos.y = se.transform.position.y;
-			se.transform.position = worldImagePos;
+			imagePos.y = se.transform.position.y;
+			se.transform.position = imagePos;
 		}
 	}
 	

@@ -17,11 +17,14 @@ public class HealthContainer : MonoBehaviour
 	
 	public float randomExplosionVariant;
 	
+	Animator animator;
+	
 	bool shattered;
 	
 	void Start()
 	{
 		Reset ();
+		animator = gameObject.GetComponent<Animator>();
 	}
 	
 	public void Shatter()
@@ -38,6 +41,7 @@ public class HealthContainer : MonoBehaviour
 			child.GetComponent<Rigidbody>().AddExplosionForce( randomExplosiveForce, explosionPoint.position, explosionRadius );
 			
 		shatterParticles.Play();
+		animator.Play("HealthContainer_Hit");
 	}
 	
 	public void Reset()
