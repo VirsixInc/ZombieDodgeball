@@ -110,6 +110,7 @@ public class GameManager : MonoBehaviour {
 		ballManager = GetComponent<BallManager> ();
 		playerManager = GetComponent<PlayerManager> ();
 
+		CheckDebugInfoLog();
 //		guiStyle = new GUIStyle();
 	}
 
@@ -657,7 +658,11 @@ public class GameManager : MonoBehaviour {
 		greenScoreTextShadow.text = gScore.ToString();
 		waveAchievedText.text = round.ToString();
 		continueTimeText.text = timer.ToString();
-		highScoreText.text = "99";
+		
+		if( rScore + gScore > GetHighScore() )
+			SetNewHighScore( rScore + gScore );
+			
+		highScoreText.text = GetHighScore().ToString();;
 
 		greenCircle.fillAmount = 0;
 		redCircle.fillAmount = 0;
@@ -672,9 +677,9 @@ public class GameManager : MonoBehaviour {
 //		GameObject.Find("ScoreGUI").GetComponent<ScoreGUI>().Activate();
 //		GameObject.Find("Timer").SetActive(false);
 		
-		for(int i = 0; i < playerManager.playerData.Count; i++) {
-			HighScoreManager.AddScore(playerManager.playerData[i].score);
-		}
+//		for(int i = 0; i < playerManager.playerData.Count; i++) {
+//			HighScoreManager.AddScore(playerManager.playerData[i].score);
+//		}
 		
 		//queueManager.Reset();
 		
@@ -688,6 +693,44 @@ public class GameManager : MonoBehaviour {
 		healthContainers.RemoveRange (0, healthContainers.Count);
 
 		return;
+	}
+	
+	int GetHighScore()
+	{
+		string filePath = Application.persistentDataPath + "/ZombieDodgeballDebugInfo.txt";
+		
+		string[] debugFile = System.IO.File.ReadAllLines(filePath);
+		
+		if( debugFile.Length <= 0 )
+			return 0;
+		
+		return int.Parse( debugFile[0] );
+	}
+	
+	void SetNewHighScore( int score )
+	{
+		string filePath = Application.persistentDataPath + "/ZombieDodgeballDebugInfo.txt";
+		
+		string[] debugFile = System.IO.File.ReadAllLines(filePath);
+		
+		debugFile[0] = score.ToString();
+		
+		System.IO.File.WriteAllLines( filePath, debugFile );
+	}
+	
+	void CheckDebugInfoLog()
+	{
+		string filePath = Application.persistentDataPath + "/ZombieDodgeballDebugInfo.txt";
+		if(!System.IO.File.Exists(filePath)) //TODO: check to see if certain info is missing
+		{
+			//System.IO.File.Create(filePath);
+			string[] debugInfo = new string[2];
+			
+			debugInfo[0] = "0";
+			debugInfo[1] = "50";
+			
+			System.IO.File.WriteAllLines( filePath, debugInfo );
+		}
 	}
 	
 //	IEnumerator GameOverGui() {

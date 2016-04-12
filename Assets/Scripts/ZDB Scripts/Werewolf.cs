@@ -16,7 +16,7 @@ public class Werewolf : BaseEnemy
 	{
 		base.Start ();
 		speed = 2f;
-		attackTime = 1.3f;
+		attackTime = 1.2f;
 		moveSpeedByDistance = false;
 		//deathTime = 0f;
 	}

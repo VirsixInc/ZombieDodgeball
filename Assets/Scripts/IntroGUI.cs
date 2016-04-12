@@ -98,7 +98,7 @@ public class IntroGUI : MonoBehaviour {
 		score = GameObject.Find("Score");
 		directions = GameObject.Find("Directions");
 
-		highScores = HighScoreManager.s_instance.highScores;
+//		highScores = HighScoreManager.s_instance.highScores;
 
 		FormatScores(highScores.dailyScores, dailyScores);
 		FormatScores(highScores.weeklyScores, weeklyScores);
