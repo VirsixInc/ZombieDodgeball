@@ -14,8 +14,7 @@ public class BombPulse : MonoBehaviour
 	
 	void Start()
 	{
-		rend = gameObject.GetComponent<Renderer>();
-		rend.material = baseMat;
+		RendererCheck();
 	}
 	
 	void Update () 
@@ -32,6 +31,16 @@ public class BombPulse : MonoBehaviour
 	{
 		pulsing = pulse;
 		timer = 0;
+		RendererCheck();
 		rend.material.Lerp(baseMat, pulseMat, 0);
+	}
+	
+	void RendererCheck()
+	{
+		if( rend == null )
+		{
+			rend = gameObject.GetComponent<Renderer>();
+			rend.material = baseMat;
+		}
 	}
 }

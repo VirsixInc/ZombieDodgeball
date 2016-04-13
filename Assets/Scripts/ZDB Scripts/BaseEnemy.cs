@@ -6,6 +6,8 @@ public class BaseEnemy: MonoBehaviour
 {
 	public float speed = 1f;
 	public int pointValue = 1;
+	
+	public GameObject pelvis;
 
 	protected bool moving;
 	protected bool hasBeenHit = false;
@@ -17,6 +19,7 @@ public class BaseEnemy: MonoBehaviour
 	protected float attackTime = 2f;
 	protected bool hasDeathAnim = false;
 	protected bool moveSpeedByDistance = true;
+	protected Vector3 pelvisPos;
 
 	float distToNode;
 	float timer = 0.0f;
@@ -26,6 +29,7 @@ public class BaseEnemy: MonoBehaviour
 	protected virtual void Start () 
 	{
 		deathTime = 1.5f;
+		ResetPelvis();
 	}
 
 	protected virtual void Update () 
@@ -167,16 +171,20 @@ public class BaseEnemy: MonoBehaviour
 			animator = GetComponent<Animator> ();
 		animator.enabled = true;
 		SetKinematic (true);
+		ResetPelvis();
 		MovementCheck ();
 	}
 
 	protected virtual void SetKinematic( bool value ) 
 	{
+		gameObject.GetComponent<Rigidbody>().isKinematic = value;
+	
 		Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
 		
 		foreach( Rigidbody rB in rigidbodies ) 
 		{
 			rB.isKinematic = value;
+			rB.velocity = rB.angularVelocity = Vector3.zero;
 		}
 	}
 	
@@ -193,12 +201,22 @@ public class BaseEnemy: MonoBehaviour
 	public IEnumerator DelayedExplosiveForce( object[] parms )
 	{
 		yield return new WaitForSeconds( (float)parms[0] );
-	
 		Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
 		
 		foreach( Rigidbody rB in rigidbodies ) 
 		{
-			rB.AddExplosionForce( (float)parms[1], (Vector3)parms[2], (float)parms[3] );
+			if( !rB.isKinematic )
+				rB.AddExplosionForce( (float)parms[1], (Vector3)parms[2], (float)parms[3] );
+		}
+	}
+	
+	void ResetPelvis()
+	{
+		if( pelvis != null )
+		{
+			if( pelvisPos == null )
+				pelvisPos = pelvis.transform.position;
+			pelvis.transform.position = pelvisPos;
 		}
 	}
 	
