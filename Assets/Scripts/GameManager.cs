@@ -437,6 +437,7 @@ public class GameManager : MonoBehaviour {
 			foreach( HealthContainer hc in healthContainers )
 				hc.Reset();
 			ResetSpawnManager();
+			isGamePlaying = true;
 			gameOverUI.SetActive(false);
 			currLives = maxLives;
 			StartNextRound();
