@@ -32,5 +32,6 @@ public class BombPulse : MonoBehaviour
 	{
 		pulsing = pulse;
 		timer = 0;
+		rend.material.Lerp(baseMat, pulseMat, 0);
 	}
 }

@@ -145,9 +145,13 @@ public class GameManager : MonoBehaviour {
 			greenCircle = GameObject.Find("Moon Green").GetComponent<Image>();
 			redCircle = GameObject.Find("Moon Red").GetComponent<Image>();
 			
-			for( int i = 1; i < 6; ++i )
+			if( healthContainers.Count != 5 )
 			{
-				healthContainers.Add( GameObject.Find( "HealthContainer_" + i ).GetComponent<HealthContainer>() );
+				healthContainers.Clear();
+				for( int i = 1; i < 6; ++i )
+				{
+					healthContainers.Add( GameObject.Find( "HealthContainer_" + i ).GetComponent<HealthContainer>() );
+				}
 			}
 			
 			playerManager.GetText();
@@ -426,6 +430,17 @@ public class GameManager : MonoBehaviour {
 			gameStarted = true;
 			timer = joinTimer;
 		}
+		
+		if( mode == GameMode.Scoreboard )
+		{
+			mode = GameMode.Main;
+			foreach( HealthContainer hc in healthContainers )
+				hc.Reset();
+			ResetSpawnManager();
+			gameOverUI.SetActive(false);
+			currLives = maxLives;
+			StartNextRound();
+		}
 
 		if(mode == GameMode.Main) {
 			pos.x *= Screen.width;
@@ -560,10 +575,13 @@ public class GameManager : MonoBehaviour {
 //    	}
 	}
 
-	public void ResetSpawnManager() {
-		if( spawnManager != null ) {
+	public void ResetSpawnManager() 
+	{
+		if( spawnManager != null ) 
+		{
 			GameObject[] enemies = GameObject.FindGameObjectsWithTag( "Enemy" );
-			foreach( GameObject tempEnemy in enemies ) {
+			foreach( GameObject tempEnemy in enemies ) 
+			{
 				tempEnemy.SendMessage( "Reset", SendMessageOptions.DontRequireReceiver );
 			}
 		}
@@ -690,7 +708,7 @@ public class GameManager : MonoBehaviour {
 		}
 
 
-		healthContainers.RemoveRange (0, healthContainers.Count);
+		//healthContainers.RemoveRange (0, healthContainers.Count);
 
 		return;
 	}
