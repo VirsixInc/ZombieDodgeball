@@ -44,7 +44,7 @@ public class BaseEnemy: MonoBehaviour
 		else if( moving )
 		{
 			float lerpPercentage = timer * speed;// / ( distToNode );
-			
+			PelvisCheck();
 			if( moveSpeedByDistance )
 				lerpPercentage /= distToNode;
 			
@@ -71,6 +71,7 @@ public class BaseEnemy: MonoBehaviour
 	{
 		moving = false;
 		hasBeenHit = false;
+		ResetPelvis();
 		gameObject.SetActive(false);
 	}
 
@@ -201,6 +202,7 @@ public class BaseEnemy: MonoBehaviour
 	public IEnumerator DelayedExplosiveForce( object[] parms )
 	{
 		yield return new WaitForSeconds( (float)parms[0] );
+		
 		Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
 		
 		foreach( Rigidbody rB in rigidbodies ) 
@@ -217,6 +219,17 @@ public class BaseEnemy: MonoBehaviour
 			if( pelvisPos == null )
 				pelvisPos = pelvis.transform.position;
 			pelvis.transform.position = pelvisPos;
+		}
+	}
+	
+	void PelvisCheck()
+	{
+		if( pelvis != null )
+		{
+			if( Mathf.Abs( pelvis.transform.position.x - pelvisPos.x ) >= 1f )
+			{
+				ResetPelvis();
+			}
 		}
 	}
 	
