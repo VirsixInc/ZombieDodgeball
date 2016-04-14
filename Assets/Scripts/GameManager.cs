@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour {
 	Text greenScoreText;
 	Text redScoreTextShadow;
 	Text greenScoreTextShadow;
+	Text combinedScoreText;
+	Text combinedScoreTextShadow;
 	Text highScoreText;
 	Text waveAchievedText;
 	Text continueTimeText;
@@ -137,6 +139,8 @@ public class GameManager : MonoBehaviour {
 			greenScoreText = GameObject.Find("Green Score").GetComponent<Text>();
 			redScoreTextShadow = GameObject.Find("Red Score Shadow").GetComponent<Text>();
 			greenScoreTextShadow = GameObject.Find("Green Score Shadow").GetComponent<Text>();
+			combinedScoreText = GameObject.Find("Combined_Score").GetComponent<Text>();
+			combinedScoreTextShadow = GameObject.Find("Combined_Shadow").GetComponent<Text>();
 			redCrown = GameObject.Find("Crown_Red");
 			greenCrown = GameObject.Find("Crown_Green");
 			waveAchievedText = GameObject.Find("Wave").GetComponent<Text>();
@@ -677,6 +681,8 @@ public class GameManager : MonoBehaviour {
 		greenScoreTextShadow.text = gScore.ToString();
 		waveAchievedText.text = round.ToString();
 		continueTimeText.text = timer.ToString();
+		
+		combinedScoreText.text = combinedScoreTextShadow.text = (rScore + gScore).ToString();
 		
 		if( rScore + gScore > GetHighScore() )
 			SetNewHighScore( rScore + gScore );

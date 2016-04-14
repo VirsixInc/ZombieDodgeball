@@ -8,6 +8,8 @@ public class BaseEnemy: MonoBehaviour
 	public int pointValue = 1;
 	
 	public GameObject pelvis;
+	
+	public AudioSource hitSound;
 
 	protected bool moving;
 	protected bool hasBeenHit = false;
@@ -20,6 +22,7 @@ public class BaseEnemy: MonoBehaviour
 	protected bool hasDeathAnim = false;
 	protected bool moveSpeedByDistance = true;
 	protected Vector3 pelvisPos;
+	protected AudioManager audioMan;
 
 	float distToNode;
 	float timer = 0.0f;
@@ -30,6 +33,7 @@ public class BaseEnemy: MonoBehaviour
 	{
 		deathTime = 1.5f;
 		ResetPelvis();
+		audioMan = GameObject.Find("Audio Manager").GetComponent<AudioManager>();
 	}
 
 	protected virtual void Update () 
@@ -81,7 +85,8 @@ public class BaseEnemy: MonoBehaviour
 			return;
 			
 		Ball hittingBall = hittingObj.GetComponent<Ball>();
-
+		
+		audioMan.PlaySound( audioMan.GetHitSoundName( name ) );
 
 		if( hittingBall.color == PlayerColor.Red ) 
 		{
@@ -103,6 +108,7 @@ public class BaseEnemy: MonoBehaviour
 		PlayerManager.AddPoints(hittingBall.color, pointValue);
 
 
+		hitSound.Play();
 		SetKinematic( false );
 		hasBeenHit = true;
 		if( !hasDeathAnim )
@@ -149,6 +155,9 @@ public class BaseEnemy: MonoBehaviour
 	
 	protected virtual void Attack()
 	{
+		if( !name.Contains("Balloon") )
+			audioMan.PlaySound("ZombieAttack");
+
 		if( GameManager.instance.isGamePlaying )
 			GameManager.instance.ReduceLives( 1, this );
 		Reset();

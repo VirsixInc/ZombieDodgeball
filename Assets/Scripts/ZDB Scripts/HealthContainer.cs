@@ -16,6 +16,8 @@ public class HealthContainer : MonoBehaviour
 	public float explosionRadius;
 	
 	public float randomExplosionVariant;
+
+	AudioManager audioMan;
 	
 	Animator animator;
 	
@@ -25,6 +27,7 @@ public class HealthContainer : MonoBehaviour
 	{
 		Reset ();
 		animator = gameObject.GetComponent<Animator>();
+		audioMan = GameObject.Find("Audio Manager").GetComponent<AudioManager>();
 	}
 	
 	public void Shatter()
@@ -32,6 +35,8 @@ public class HealthContainer : MonoBehaviour
 		fullContainer.SetActive(false);
 		shatteredContainer.SetActive(true);
 		shattered = true;
+		
+		audioMan.PlaySound("HeartContainerShatter");
 		
 		GameObject go = (GameObject)Instantiate( shatterPrefab, shatteredContainer.transform.position, shatteredContainer.transform.rotation );
 		

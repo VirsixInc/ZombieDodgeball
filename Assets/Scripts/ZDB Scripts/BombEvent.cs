@@ -6,6 +6,8 @@ public class BombEvent : EventSystem
 	public GameObject explosionParticlesPrefab;
 	
 	public float explosionRadius;
+
+	AudioManager audioMan;
 	
 	float collisionDelay = 0.5f;
 	float delayTimer = 0.0f;
@@ -13,6 +15,7 @@ public class BombEvent : EventSystem
 	protected override void Start()
 	{
 		base.Start();
+		audioMan = GameObject.Find("Audio Manager").GetComponent<AudioManager>();
 	}
 	
 	protected override void Update()
@@ -30,23 +33,25 @@ public class BombEvent : EventSystem
 	{
 		//if( col.transform.tag == "Untagged" )
 		//{
-			Instantiate( explosionParticlesPrefab, transform.position, Quaternion.identity );
-			
-			Collider[] enemiesHit = Physics.OverlapSphere( transform.position, explosionRadius );
-			
-			foreach( Collider enemyCol in enemiesHit )
+		audioMan.PlaySound("Bomb");
+		
+		Instantiate( explosionParticlesPrefab, transform.position, Quaternion.identity );
+		
+		Collider[] enemiesHit = Physics.OverlapSphere( transform.position, explosionRadius );
+		
+		foreach( Collider enemyCol in enemiesHit )
+		{
+			if( enemyCol.tag == "Enemy" )
 			{
-				if( enemyCol.tag == "Enemy" )
-				{
-					enemyCol.transform.SendMessageUpwards("HitByExplosion", eventBall.gameObject, SendMessageOptions.DontRequireReceiver);
-					
-					
-					object[] parms = new object[4]{0.1f, 500f, transform.position, explosionRadius};
-					enemyCol.transform.SendMessageUpwards("DelayExplosiveForce", parms, SendMessageOptions.DontRequireReceiver);
-				}
+				enemyCol.transform.SendMessageUpwards("HitByExplosion", eventBall.gameObject, SendMessageOptions.DontRequireReceiver);
+				
+				
+				object[] parms = new object[4]{0.1f, 500f, transform.position, explosionRadius};
+				enemyCol.transform.SendMessageUpwards("DelayExplosiveForce", parms, SendMessageOptions.DontRequireReceiver);
 			}
-			
-			GameObject.Destroy( gameObject );
+		}
+		
+		GameObject.Destroy( gameObject );
 			
 		//}
 	}
