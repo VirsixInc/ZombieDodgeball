@@ -62,5 +62,6 @@ public class FlyingZombie : BaseEnemy
 	{
 		base.Attack();
 		Instantiate( explosionParticlesPrefab, bombTransform.position, Quaternion.identity );
+		audioMan.PlaySound("Bomb");
 	}
 }

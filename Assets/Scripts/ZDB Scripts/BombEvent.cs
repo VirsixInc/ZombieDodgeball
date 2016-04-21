@@ -27,6 +27,7 @@ public class BombEvent : EventSystem
 	{
 		base.StartEvent( eBall );
 		delayTimer = collisionDelay;
+		audioMan = GameObject.Find("Audio Manager").GetComponent<AudioManager>();
 	}
 	
 	void OnCollisionEnter(Collision col) 

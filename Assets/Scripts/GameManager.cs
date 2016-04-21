@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour {
 
 	public float joinTimer = 5f;
 	public float gameTimer = 180f;
-	public float scoreboardTimer = 15f;
+	float scoreboardTimer = 15f;
 
 	bool inBetweenRounds = false;
 	int round = 1;
@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour {
 	PlayerManager playerManager;
 	SpawnManager spawnManager;
 	ScreenEffectManager screenEffects;
+	AudioManager audioManager;
 
 //	IntroGUI introGUI;
 
@@ -125,9 +126,12 @@ public class GameManager : MonoBehaviour {
 		else if(level == 1) 
 		{
 			isGamePlaying = true;
+			currLives = maxLives;
 			gameOverText = GameObject.Find( "GameOverGui" ).transform;
 			gameOverText.gameObject.SetActive( true );
 			spawnManager = GameObject.FindObjectOfType<SpawnManager>();
+			audioManager = GameObject.Find ("Audio Manager").GetComponent<AudioManager>();
+			audioManager.Reset();
 			screenEffects = spawnManager.gameObject.GetComponent<ScreenEffectManager>();
 
 			// Get Hp Gui in scene
@@ -149,14 +153,13 @@ public class GameManager : MonoBehaviour {
 			greenCircle = GameObject.Find("Moon Green").GetComponent<Image>();
 			redCircle = GameObject.Find("Moon Red").GetComponent<Image>();
 			
-			if( healthContainers.Count != 5 )
+
+			healthContainers.Clear();
+			for( int i = 1; i < 6; ++i )
 			{
-				healthContainers.Clear();
-				for( int i = 1; i < 6; ++i )
-				{
-					healthContainers.Add( GameObject.Find( "HealthContainer_" + i ).GetComponent<HealthContainer>() );
-				}
+				healthContainers.Add( GameObject.Find( "HealthContainer_" + i ).GetComponent<HealthContainer>() );
 			}
+
 			
 			playerManager.GetText();
 			round = 1;
@@ -435,7 +438,7 @@ public class GameManager : MonoBehaviour {
 			timer = joinTimer;
 		}
 		
-		if( mode == GameMode.Scoreboard )
+		if( mode == GameMode.Scoreboard && gameOverAnimDone )
 		{
 			mode = GameMode.Main;
 			foreach( HealthContainer hc in healthContainers )

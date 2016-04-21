@@ -54,6 +54,7 @@ public class HealthContainer : MonoBehaviour
 		fullContainer.SetActive(true);
 		shatteredContainer.SetActive(false);
 		shattered = false;
+		audioMan = GameObject.Find("Audio Manager").GetComponent<AudioManager>();
 	}
 	
 	public bool IsShattered()

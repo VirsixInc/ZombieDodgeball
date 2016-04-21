@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class AudioManager : MonoBehaviour 
 {
 	//prefabs
-	public AudioSource zombieSoundPrefab;
-	public AudioSource werewolfSoundPrefab;
+	public GameObject zombieSoundPrefab;
+	public GameObject werewolfSoundPrefab;
 
 	//sounds
 	public List<AudioSource> zombieSounds;
@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
 	public AudioSource bomb;
 	public AudioSource heartContainerShatter;
 	public AudioSource zombieAttack;
+	public AudioSource werewolfAttack;
 	
 	public void PlaySound( string audio )
 	{
@@ -55,6 +56,9 @@ public class AudioManager : MonoBehaviour
 		case "ZombieAttack":
 			zombieAttack.Play();
 			break;
+		case "WerewolfAttack":
+			werewolfAttack.Play();
+			break;
 		}
 	}
 	
@@ -65,5 +69,11 @@ public class AudioManager : MonoBehaviour
 		else if( objectName.Contains("Werewolf") )
 			return "WerewolfHit";
 		return "";
+	}
+
+	public void Reset()
+	{
+		zombieSounds.Clear();
+		werewolfSounds.Clear();
 	}
 }

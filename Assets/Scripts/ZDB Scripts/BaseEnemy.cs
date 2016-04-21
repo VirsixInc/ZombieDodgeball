@@ -8,8 +8,6 @@ public class BaseEnemy: MonoBehaviour
 	public int pointValue = 1;
 	
 	public GameObject pelvis;
-	
-	public AudioSource hitSound;
 
 	protected bool moving;
 	protected bool hasBeenHit = false;
@@ -108,7 +106,6 @@ public class BaseEnemy: MonoBehaviour
 		PlayerManager.AddPoints(hittingBall.color, pointValue);
 
 
-		hitSound.Play();
 		SetKinematic( false );
 		hasBeenHit = true;
 		if( !hasDeathAnim )
@@ -156,7 +153,12 @@ public class BaseEnemy: MonoBehaviour
 	protected virtual void Attack()
 	{
 		if( !name.Contains("Balloon") )
-			audioMan.PlaySound("ZombieAttack");
+		{
+			if( name.Contains("Werewolf") )
+				audioMan.PlaySound("WerewolfAttack");
+			else
+				audioMan.PlaySound("ZombieAttack");
+		}
 
 		if( GameManager.instance.isGamePlaying )
 			GameManager.instance.ReduceLives( 1, this );
@@ -177,6 +179,7 @@ public class BaseEnemy: MonoBehaviour
 		attackMode = false;
 		hasBeenHit = false;
 		dead = false;
+		audioMan = GameObject.Find("Audio Manager").GetComponent<AudioManager>();
 		if( animator == null )
 			animator = GetComponent<Animator> ();
 		animator.enabled = true;
