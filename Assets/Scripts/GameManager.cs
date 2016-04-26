@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour {
 	
 	public List<HealthContainer> healthContainers;
 
+	public Text introText;
+
 	bool gameOverAnimDone = false;
 	bool gameWon = false;
 	Text waveText;
@@ -369,6 +371,7 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 		if(!gameStarted) {
+			introText.text = "Game Starting...";
 			gameStarted = true;
 			timer = joinTimer;
 		}
