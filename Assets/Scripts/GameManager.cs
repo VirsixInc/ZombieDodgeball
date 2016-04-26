@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour {
 	public List<HealthContainer> healthContainers;
 
 	bool gameOverAnimDone = false;
+	bool gameWon = false;
 	Text waveText;
 	Text redScoreText;
 	Text greenScoreText;
@@ -61,6 +62,8 @@ public class GameManager : MonoBehaviour {
 	GameObject gameOverUI;
 	Image redCircle;
 	Image greenCircle;
+	Image gameOverImage;
+	Image congratulationsImage;
 
 //	private GameObject redScoreBox, yellowScoreBox, blueScoreBox, greenScoreBox;
 //	private GUIText redScoreTxt, redPlaceTxt, redAccTxt,
@@ -126,6 +129,7 @@ public class GameManager : MonoBehaviour {
 		else if(level == 1) 
 		{
 			isGamePlaying = true;
+			gameWon = false;
 			currLives = maxLives;
 			gameOverText = GameObject.Find( "GameOverGui" ).transform;
 			gameOverText.gameObject.SetActive( true );
@@ -152,6 +156,8 @@ public class GameManager : MonoBehaviour {
 			continueTimeText = GameObject.Find("ContinueTime").GetComponent<Text>();
 			greenCircle = GameObject.Find("Moon Green").GetComponent<Image>();
 			redCircle = GameObject.Find("Moon Red").GetComponent<Image>();
+			gameOverImage = GameObject.Find("GameOver").GetComponent<Image>();
+			congratulationsImage = GameObject.Find("Congratulations").GetComponent<Image>();
 			
 
 			healthContainers.Clear();
@@ -267,56 +273,6 @@ public class GameManager : MonoBehaviour {
 				RoundOver();
 			}
 
-//			if(timer <= 0 && isGamePlaying == true ) 
-//			{
-//				//EndGame();
-//				foreach( UnityEngine.UI.Image image in HpCounters ) {
-//					image.enabled = false;
-//				}
-//
-//				isGamePlaying = false;
-//				gameOverText.gameObject.SetActive( true );
-//				StartCoroutine( "GameOverGui" );
-//				ballManager.StopAllCoroutines();
-//				StopAllCoroutines();
-//				timer = scoreboardTimer;
-//				mode = GameMode.Scoreboard;
-//
-//				redScoreBox.SetActive( false );
-//				yellowScoreBox.SetActive( false );
-//				blueScoreBox.SetActive( false );
-//				greenScoreBox.SetActive( false );
-//
-////				GameObject.Find("GameCamera").camera.enabled = false;
-////				GameObject.Find("ScoreCamera").camera.enabled = true;
-//				GameObject.Find("ScoreGUI").GetComponent<ScoreGUI>().Activate();
-//				GameObject.Find("Timer").SetActive(false);
-//
-//				for(int i = 0; i < playerManager.playerData.Count; i++) {
-//					HighScoreManager.AddScore(playerManager.playerData[i].score);
-//				}
-//
-//				//queueManager.Reset();
-//
-//				Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();
-//				foreach( Enemy enemy in enemies ) {
-//					enemy.StopAllCoroutines();
-//					enemy.gameObject.SetActive( false );
-//				}
-//
-//				return;
-//			}
-
-			// Update score gui
-//			if( redScoreBox.activeSelf == false && playerManager.Added( PlayerColor.Red ))
-//				redScoreBox.SetActive( true );
-////			if( yellowScoreBox.activeSelf == false && playerManager.Added( PlayerColor.Yellow ))
-////				yellowScoreBox.SetActive( true );
-////			if( blueScoreBox.activeSelf == false && playerManager.Added( PlayerColor.Blue ))
-////				blueScoreBox.SetActive( true );
-//			if( greenScoreBox.activeSelf == false && playerManager.Added( PlayerColor.Green ))
-//				greenScoreBox.SetActive( true );
-
 			for(int i = 0; i < playerManager.playerData.Count; i++) {
 				string tempScoreStr = playerManager.playerData[i].score.ToString();
 
@@ -332,28 +288,7 @@ public class GameManager : MonoBehaviour {
 					tempScoreStr = " " + tempScoreStr;
 				if(tempAccStr.Length < 2)
 					tempAccStr = " " + tempAccStr;
-				
-//				switch( playerManager.playerData[i].color ) {
-//				case PlayerColor.Red:
-//					redScoreTxt.text = "Score: " + tempScoreStr;
-//					redAccTxt.text = "Accuracy: " + tempAccStr + "%";
-					break;
-//				case PlayerColor.Yellow:
-//					yellowScoreTxt.text = "Score: " + tempScoreStr;
-//					yellowAccTxt.text = "Accuracy: " + tempAccStr + "%";
-//					break;
-//				case PlayerColor.Green:
-//					greenScoreTxt.text = "Score: " + tempScoreStr;
-//					greenAccTxt.text = "Accuracy: " + tempAccStr + "%";
-//					break;
-//				case PlayerColor.Blue:
-//					blueScoreTxt.text = "Score: " + tempScoreStr;
-//					blueAccTxt.text = "Accuracy: " + tempAccStr + "%";
-//					break;
-//				}
 			}
-
-			//timer -= Time.deltaTime;
 			break;
 		case GameMode.Scoreboard:
 
@@ -438,7 +373,7 @@ public class GameManager : MonoBehaviour {
 			timer = joinTimer;
 		}
 		
-		if( mode == GameMode.Scoreboard && gameOverAnimDone )
+		if( mode == GameMode.Scoreboard && gameOverAnimDone && !gameWon )
 		{
 			mode = GameMode.Main;
 			foreach( HealthContainer hc in healthContainers )
@@ -450,10 +385,12 @@ public class GameManager : MonoBehaviour {
 			StartNextRound();
 		}
 
-		if(mode == GameMode.Main) {
+		if(mode == GameMode.Main) 
+		{
 			pos.x *= Screen.width;
 			pos.y = 1 - pos.y;
 			pos.y *= Screen.height;
+			pos.y += 1f;
 			ballManager.Shoot(pos, color);
 		}
 	}
@@ -463,6 +400,7 @@ public class GameManager : MonoBehaviour {
 		round ++;
 		if( round > maxRounds )
 		{
+			gameWon = true;
 			EndGame();
 			return;
 		}
@@ -682,7 +620,7 @@ public class GameManager : MonoBehaviour {
 		greenScoreText.text = gScore.ToString();
 		redScoreTextShadow.text = rScore.ToString();
 		greenScoreTextShadow.text = gScore.ToString();
-		waveAchievedText.text = round.ToString();
+		waveAchievedText.text = (round - 1).ToString();
 		continueTimeText.text = timer.ToString();
 		
 		combinedScoreText.text = combinedScoreTextShadow.text = (rScore + gScore).ToString();
@@ -694,22 +632,14 @@ public class GameManager : MonoBehaviour {
 
 		greenCircle.fillAmount = 0;
 		redCircle.fillAmount = 0;
-		
-//		redScoreBox.SetActive( false );
-//		yellowScoreBox.SetActive( false );
-//		blueScoreBox.SetActive( false );
-//		greenScoreBox.SetActive( false );
-		
-//		GameObject.Find("GameCamera").camera.enabled = false;
-//		GameObject.Find("ScoreCamera").camera.enabled = true;
-//		GameObject.Find("ScoreGUI").GetComponent<ScoreGUI>().Activate();
-//		GameObject.Find("Timer").SetActive(false);
-		
-//		for(int i = 0; i < playerManager.playerData.Count; i++) {
-//			HighScoreManager.AddScore(playerManager.playerData[i].score);
-//		}
-		
-		//queueManager.Reset();
+
+		gameOverImage.gameObject.SetActive(false);
+		congratulationsImage.gameObject.SetActive(false);
+
+		if( gameWon )
+			congratulationsImage.gameObject.SetActive(true);
+		else
+			gameOverImage.gameObject.SetActive(true);
 		
 		Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();
 		foreach( Enemy enemy in enemies ) {
