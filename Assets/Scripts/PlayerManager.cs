@@ -117,4 +117,16 @@ public class PlayerManager : MonoBehaviour
 		}
 		return 0;
 	}
+
+	public void SetScore( PlayerColor color, int score )
+	{
+		foreach(PlayerData player in s_instance.playerData)
+		{
+			if(player.color == color) 
+			{
+				player.score = score;
+				return;
+			}
+		}
+	}
 }

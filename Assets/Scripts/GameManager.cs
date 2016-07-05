@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour {
 
 	bool inBetweenRounds = false;
 	int round = 1;
+	int rScoreAtRoundEnd = 0;
+	int gScoreAtRoundEnd = 0;
 	const int maxRounds = 8;
 
 	[System.NonSerialized]
@@ -385,6 +387,10 @@ public class GameManager : MonoBehaviour {
 			isGamePlaying = true;
 			gameOverUI.SetActive(false);
 			currLives = maxLives;
+			playerManager.SetScore( PlayerColor.Red, rScoreAtRoundEnd );
+			playerManager.SetScore( PlayerColor.Green, gScoreAtRoundEnd );
+			playerManager.SetScoreText( rScoreAtRoundEnd, PlayerColor.Red );
+			playerManager.SetScoreText( gScoreAtRoundEnd, PlayerColor.Green );
 			StartNextRound();
 		}
 
@@ -401,6 +407,8 @@ public class GameManager : MonoBehaviour {
 	public void RoundOver() //called by spawner manager when wave is over
 	{
 		round ++;
+		rScoreAtRoundEnd = playerManager.GetScore( PlayerColor.Red );
+		gScoreAtRoundEnd = playerManager.GetScore( PlayerColor.Green );
 		if( round > maxRounds )
 		{
 			gameWon = true;
@@ -448,6 +456,8 @@ public class GameManager : MonoBehaviour {
 			break;
 		case "Main":
 			currLives = maxLives;
+			rScoreAtRoundEnd = 0;
+			gScoreAtRoundEnd = 0;
 			//timer = gameTimer;
 			mode = GameMode.Main;
 			Application.LoadLevel("ZombieMain");
